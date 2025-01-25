@@ -23,14 +23,6 @@ func sell_stock(stock_name: String, stock_price: float, quantity: int) -> void:
 	last_transaction = total_revenue
 	print("Sold stock for $", total_revenue, ". New BP: $", buying_power)
 
-# Function to get current balances
-func get_balances() -> Dictionary:
-	return {
-		"buying_power": buying_power,
-		"invested_money": invested_money,
-		"last_transaction": last_transaction
-	}
-
 # Function to get the last transaction as a formatted string
 func get_last_transaction() -> String:
 	return str(last_transaction) if last_transaction >= 0 else str(last_transaction)
