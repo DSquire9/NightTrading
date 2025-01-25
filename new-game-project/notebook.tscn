@@ -32,13 +32,13 @@ texture = SubResource("PlaceholderTexture2D_yiekj")
 script = ExtResource("2_m1mu5")
 
 [node name="notepad" type="TextureRect" parent="."]
-offset_left = -281.0
-offset_top = -321.0
-offset_right = 302.0
-offset_bottom = 423.0
+offset_left = -288.0
+offset_top = -347.0
+offset_right = 295.0
+offset_bottom = 397.0
 texture = SubResource("PlaceholderTexture2D_2mxde")
 
-[node name="Button" type="Button" parent="notepad"]
+[node name="confirm" type="Button" parent="notepad"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 652.0
@@ -46,7 +46,7 @@ offset_right = 169.0
 offset_bottom = 716.0
 text = "Call"
 
-[node name="Button2" type="Button" parent="notepad"]
+[node name="buy" type="Button" parent="notepad"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 130.0
@@ -54,14 +54,93 @@ offset_right = 189.0
 offset_bottom = 195.0
 text = "Buy"
 
-[node name="Button3" type="Button" parent="notepad"]
+[node name="sell" type="Button" parent="notepad"]
+layout_mode = 0
 offset_left = 375.0
 offset_top = 131.0
 offset_right = 492.0
 offset_bottom = 196.0
 text = "Sell"
 
+[node name="tab1" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 9.0
+offset_right = 578.0
+offset_bottom = 56.0
+text = "1"
+
+[node name="tab2" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 63.0
+offset_right = 578.0
+offset_bottom = 110.0
+text = "2"
+
+[node name="tab3" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 119.0
+offset_right = 578.0
+offset_bottom = 166.0
+text = "3"
+
+[node name="tab4" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 175.0
+offset_right = 577.0
+offset_bottom = 222.0
+text = "4"
+
+[node name="tab5" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 230.0
+offset_right = 577.0
+offset_bottom = 277.0
+text = "5"
+
+[node name="tab6" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 284.0
+offset_right = 577.0
+offset_bottom = 331.0
+text = "6"
+
+[node name="tab7" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 336.0
+offset_right = 576.0
+offset_bottom = 383.0
+text = "7"
+
+[node name="stock" type="RichTextLabel" parent="notepad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -74.0
+offset_right = 14.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+
 [connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]
-[connection signal="pressed" from="notepad/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="notepad/Button2" to="." method="_on_buy_button_pressed"]
-[connection signal="pressed" from="notepad/Button3" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="notepad/confirm" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="notepad/buy" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="notepad/sell" to="." method="_on_sell_button_pressed"]
+[connection signal="pressed" from="notepad/tab1" to="." method="_on_tab_1_pressed"]
+[connection signal="pressed" from="notepad/tab2" to="." method="_on_tab_2_pressed"]
+[connection signal="pressed" from="notepad/tab3" to="." method="_on_tab_3_pressed"]
+[connection signal="pressed" from="notepad/tab4" to="." method="_on_tab_4_pressed"]
+[connection signal="pressed" from="notepad/tab5" to="." method="_on_tab_5_pressed"]
+[connection signal="pressed" from="notepad/tab6" to="." method="_on_tab_6_pressed"]
+[connection signal="pressed" from="notepad/tab7" to="." method="_on_tab_7_pressed"]
