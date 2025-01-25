@@ -27,4 +27,4 @@ script = ExtResource("1_neleb")
 
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
-[connection signal="event" from="InfoEmitter" to="." method="_on_info_emitter_event"]
+[connection signal="informantEvent" from="InfoEmitter" to="." method="_on_info_emitter_informant_event"]

@@ -2,6 +2,7 @@ extends Node
 signal stockPop
 
 @export var currPrice = 0
+@export var pastPrice = 0
 @export var rateChangeIn = 0
 var bubbleMin = 500
 var bubbleMax = 750
@@ -33,6 +34,7 @@ func _process(delta: float) -> void:
 			setRateChange()
 
 func update() -> void:
+	pastPrice = currPrice
 	currPrice += rate
 	# Floor the price at zero
 	if currPrice < 1:
@@ -76,3 +78,12 @@ func eventTrigger(positive):
 	else:
 		rate = abs(rate) * -2
 	
+func getPrediction() -> bool:
+	if bubbleMin <= currPrice:
+		return false
+	if deltCountRateChange >= rateChangeIn/2 and rate < 0:
+		return true
+	if  deltCountRateChange <= rateChangeIn/2:
+		return true if rate > 0 else false
+	return true
+		
