@@ -1,6 +1,6 @@
 extends Camera2D
 
-var screens = [0, 1500]
+var screens = [0, 1400]
 var currentScreen = 0
 var t = 0.0
 var start = Vector2(0,0)

@@ -58,8 +58,9 @@ func getRadioPrediction(channel) -> bool:
 
 
 ## For Redrawing Scene
-func on_informant_updated( location: InformantManager.InformantLocation, message: String ):
+func on_informant_updated( _location: InformantManager.InformantLocation, _message: String ):
 	redraw_backgrounds();
 
 func redraw_backgrounds():
 	var informant_location: InformantManager.InformantLocation = informant_manager.informant_location;
+	# do something with informant_location
