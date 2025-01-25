@@ -127,16 +127,67 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -74.0
-offset_right = 14.5
-offset_bottom = -34.0
+offset_left = -126.534
+offset_top = -101.114
+offset_right = -36.5336
+offset_bottom = -61.1143
+grow_horizontal = 2
+grow_vertical = 2
+text = "Stock 1"
+
+[node name="cancel" type="Button" parent="notepad"]
+offset_left = 429.727
+offset_top = 656.145
+offset_right = 562.727
+offset_bottom = 720.145
+text = "Cancel"
+
+[node name="subtract" type="Button" parent="notepad"]
+offset_left = 338.079
+offset_top = 341.115
+offset_right = 455.079
+offset_bottom = 406.115
+text = "-"
+
+[node name="add" type="Button" parent="notepad"]
+offset_left = 105.904
+offset_top = 339.109
+offset_right = 222.904
+offset_bottom = 404.109
+text = "+"
+
+[node name="quantity" type="RichTextLabel" parent="notepad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.6659
+offset_top = -18.8453
+offset_right = 67.3341
+offset_bottom = 21.1547
 grow_horizontal = 2
 grow_vertical = 2
 text = "1"
 
+[node name="price" type="RichTextLabel" parent="notepad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 46.5793
+offset_top = -101.114
+offset_right = 136.579
+offset_bottom = -61.1143
+grow_horizontal = 2
+grow_vertical = 2
+text = "$10568.78"
+
 [connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]
-[connection signal="pressed" from="notepad/confirm" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="notepad/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="notepad/buy" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="notepad/sell" to="." method="_on_sell_button_pressed"]
 [connection signal="pressed" from="notepad/tab1" to="." method="_on_tab_1_pressed"]
@@ -146,3 +197,6 @@ text = "1"
 [connection signal="pressed" from="notepad/tab5" to="." method="_on_tab_5_pressed"]
 [connection signal="pressed" from="notepad/tab6" to="." method="_on_tab_6_pressed"]
 [connection signal="pressed" from="notepad/tab7" to="." method="_on_tab_7_pressed"]
+[connection signal="pressed" from="notepad/cancel" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="notepad/subtract" to="." method="_on_subtract_pressed"]
+[connection signal="pressed" from="notepad/add" to="." method="_on_add_pressed"]
