@@ -36,7 +36,7 @@ func informant_event() -> void:
 			print("Positive " + stockName + " informant event")
 		else:
 			print("Negative " + stockName + " informant event")
-		#$UI.InformantTrigger(stockName, positive)
+		$Informant.trigger(stockName, positive)
 		stocks[eventType].eventTrigger(positive)
 		
 func setTimer() -> void:
