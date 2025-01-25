@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxsq8owv3hu2t"]
+
+[ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="1_fxfy3"]
+[ext_resource type="Script" path="res://click_object.gd" id="2_0xfyc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mweb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fxfy3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yiekj"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3mweb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-8.19564e-06, -1.00434e-05)
+scale = Vector2(130, 130)
+texture = SubResource("PlaceholderTexture2D_yiekj")
+script = ExtResource("2_0xfyc")
