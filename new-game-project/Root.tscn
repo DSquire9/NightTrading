@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=5 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
-[ext_resource type="PackedScene" uid="uid://cxftc47nig0qy" path="res://television.tscn" id="3_1l420"]
+[ext_resource type="PackedScene" path="res://television.tscn" id="3_1l420"]
 [ext_resource type="PackedScene" path="res://radio.tscn" id="4_7c415"]
-[ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -28,10 +27,5 @@ script = ExtResource("1_neleb")
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
-position = Vector2(228, 335)
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
-position = Vector2(881, 332)
-
-[node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
-position = Vector2(540, 331)
