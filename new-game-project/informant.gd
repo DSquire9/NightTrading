@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Button
 var type = ""
 var pos = false
 var deltHide = 0.0
@@ -16,12 +16,12 @@ func _process(delta: float) -> void:
 		if deltHide >= 10.0:
 			hide()
 			deltHide = 0.0
-
-func _on_sprite_2d_object_clicked():
-	print("Informant: " + type + " " + str(pos))
 		
 func trigger(stockName, positive):
 	show()
 	type = stockName
 	pos = positive
 	
+
+func _on_button_up() -> void:
+	print("Informant: " + type + " " + str(pos))
