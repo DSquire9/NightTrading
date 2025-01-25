@@ -18,5 +18,11 @@ func _on_info_emitter_event() -> void:
 	if eventType == 8:
 		print("No Event")
 	else:
+		var positive = true if randi() % 2 == 0 else false
 		var stockName = stocksArr[eventType].name
-		print(stockName + " event")
+		if positive:
+			print("Positive " + stockName + " event")
+		else:
+			print("Negative " + stockName + " event")
+		#$UI.eventTrigger(stockName, positive)
+		stocksArr[eventType].eventTrigger(positive)
