@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhnpxedauxc14"]
+
+[ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="1_ydbsk"]
+[ext_resource type="Script" path="res://notebook.gd" id="2_ik47q"]
+[ext_resource type="Script" path="res://click_object.gd" id="2_m1mu5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mweb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ydbsk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yiekj"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2mxde"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3mweb")
+script = ExtResource("2_ik47q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-8.19564e-06, -1.00434e-05)
+scale = Vector2(130, 130)
+texture = SubResource("PlaceholderTexture2D_yiekj")
+script = ExtResource("2_m1mu5")
+
+[node name="notepad" type="TextureRect" parent="."]
+offset_left = -281.0
+offset_top = -321.0
+offset_right = 302.0
+offset_bottom = 423.0
+texture = SubResource("PlaceholderTexture2D_2mxde")
+
+[node name="Button" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 652.0
+offset_right = 169.0
+offset_bottom = 716.0
+text = "Call"
+
+[node name="Button2" type="Button" parent="notepad"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 130.0
+offset_right = 189.0
+offset_bottom = 195.0
+text = "Buy"
+
+[node name="Button3" type="Button" parent="notepad"]
+offset_left = 375.0
+offset_top = 131.0
+offset_right = 492.0
+offset_bottom = 196.0
+text = "Sell"
+
+[connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]
+[connection signal="pressed" from="notepad/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="notepad/Button2" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="notepad/Button3" to="." method="_on_sell_button_pressed"]
