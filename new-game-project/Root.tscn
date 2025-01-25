@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=4 format=3 uid="uid://br4y18terbox8"]
 
-[ext_resource type="Script" path="res://Scripts/StockPrice.gd" id="1_d3yni"]
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
+[ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
+[ext_resource type="PackedScene" uid="uid://buylce0gccpig" path="res://info_emitter.tscn" id="3_audw5"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
 
-[node name="StockPrice" type="Node" parent="."]
-script = ExtResource("1_d3yni")
+[node name="InfoEmitter" parent="." instance=ExtResource("3_audw5")]
+
+[node name="Stocks" type="Node" parent="."]
+
+[node name="Tech" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Business" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Consumer_Goods" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Energy_Water" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Finance" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Healthcare" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Hospitality" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[connection signal="event" from="InfoEmitter" to="." method="_on_info_emitter_event"]
