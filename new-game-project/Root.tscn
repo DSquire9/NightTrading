@@ -28,8 +28,10 @@ script = ExtResource("1_neleb")
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
+position = Vector2(228, 335)
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
+position = Vector2(881, 332)
 
 [node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
-position = Vector2(901, 261)
+position = Vector2(540, 331)

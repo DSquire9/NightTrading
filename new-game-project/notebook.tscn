@@ -33,10 +33,11 @@ script = ExtResource("2_m1mu5")
 
 [node name="notepad" type="TextureRect" parent="."]
 visible = false
-offset_left = -288.0
-offset_top = -347.0
-offset_right = 295.0
-offset_bottom = 397.0
+offset_left = -136.0
+offset_top = -183.0
+offset_right = 447.0
+offset_bottom = 561.0
+scale = Vector2(0.491009, 0.498365)
 texture = SubResource("PlaceholderTexture2D_2mxde")
 
 [node name="confirm" type="Button" parent="notepad"]
