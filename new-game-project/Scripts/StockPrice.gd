@@ -33,13 +33,26 @@ func _process(delta: float) -> void:
 
 func update() -> void:
 	currPrice += rate
+	# Floor the price at zero
 	if currPrice < 0:
 		currPrice = 0
+		
+	# Check to see if we've reached the pop goal to stabilize the stock
+	if popped:
+		if currPrice <= popGoal:
+			popped = false
+			setRate()
+			setRateChange()
+			
+	# pop if we hit the chance
+	if currPrice >= bubbleMax or randf() <= (currPrice - bubbleMin) / (bubbleMax - bubbleMin):
+		pop() 
 	print(currPrice)
 	
 func setRate() -> void:
+	var wasNeg = true if rate < 0 else true
 	rate = randi() % (maxRate + 1) + minRate
-	if randi() % 2 == 0:
+	if !wasNeg and randi() % 2 == 0:
 		rate *= -1
 
 
@@ -53,3 +66,4 @@ func pop():
 	popped = true
 	popGoal = currPrice / 10
 	rate = abs(rate) * -3
+	print("pop!")
