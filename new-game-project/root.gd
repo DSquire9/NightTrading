@@ -4,6 +4,7 @@ extends Node
 @export var initial_n_stocks = 8.0;
 
 @onready var stocks = $Stocks;
+@onready var informant_manager = $InformantManager;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -15,6 +16,7 @@ var isInformantEventsOn = false:
 func _ready() -> void:
 	stocks.n_stocks = initial_n_stocks;
 	isInformantEventsOn = true;
+	informant_manager.informant_updated.connect(on_informant_updated);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -45,11 +47,19 @@ func trigger_informant_event() -> void:
 		stocks.get_stock(eventType).eventTrigger(positive)
 
 func getTVTrend(channel) -> bool:
-	var stock = stocks[channel]
+	var stock = stocks.get_stock(channel)
 	return true if stock.pastPrice < stock.currPrice else false
 
 func getPastSeven(channel) -> Array:
-	return stocks[channel].pastSeven
+	return stocks.get_stock(channel).pastSeven
 
 func getRadioPrediction(channel) -> bool:
-	return stocks[channel].getPrediction()
+	return stocks.get_stock(channel).getPrediction()
+
+
+## For Redrawing Scene
+func on_informant_updated( location: InformantManager.InformantLocation, message: String ):
+	redraw_backgrounds();
+
+func redraw_backgrounds():
+	var informant_location: InformantManager.InformantLocation = informant_manager.informant_location;

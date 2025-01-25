@@ -1,4 +1,4 @@
-extends Button
+class_name Notebook extends Button
 
 var currentStock = 1
 var sellbuy = true

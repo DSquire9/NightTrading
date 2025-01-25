@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=11 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock_instance.tscn" id="2_kdqgx"]
 [ext_resource type="Script" path="res://stocks.gd" id="2_lumtb"]
+[ext_resource type="Script" path="res://informant/informant_manager.gd" id="2_t0yj5"]
 [ext_resource type="PackedScene" uid="uid://cxftc47nig0qy" path="res://television.tscn" id="3_1l420"]
 [ext_resource type="PackedScene" uid="uid://dkxorndbow4gi" path="res://radio.tscn" id="4_7c415"]
 [ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
@@ -12,6 +13,9 @@
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
+
+[node name="InformantManager" type="Node" parent="."]
+script = ExtResource("2_t0yj5")
 
 [node name="Stocks" type="Node" parent="."]
 script = ExtResource("2_lumtb")

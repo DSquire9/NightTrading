@@ -1,4 +1,4 @@
-extends Button
+class_name Informant extends Button
 var type = ""
 var pos = false
 var deltHide = 0.0

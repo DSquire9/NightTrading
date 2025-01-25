@@ -1,4 +1,4 @@
-extends Button
+class_name Television extends Button
 
 var modes = 7
 var mode = 0

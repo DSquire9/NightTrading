@@ -1,4 +1,4 @@
-extends Button
+class_name Radio extends Button
 
 var modes = 7
 var mode = 0
