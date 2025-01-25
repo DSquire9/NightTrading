@@ -10,13 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	match mode:
-		1:
-			print("mode 1")
-		2:
-			print("mode 2")
-		3:
-			print("mode 3")
+	pass
 
 
 func _on_sprite_2d_object_clicked():
@@ -24,6 +18,10 @@ func _on_sprite_2d_object_clicked():
 		mode = 1
 	else:
 		mode += 1
-	var rootNode = get_node("Root")
+	print("channel: " + str(mode))
+	var rootNode = get_parent()
 	if(rootNode):
-		rootNode.getTVTrend(mode)
+		var trend = rootNode.getTVTrend(mode)
+		print(trend)
+		var past = rootNode.getPastSeven(mode)
+		print(past)

@@ -53,7 +53,7 @@ func update() -> void:
 	# pop if we hit the chance
 	if currPrice >= bubbleMax or randf() <= float(currPrice - bubbleMin) / float(bubbleMax - bubbleMin):
 		pop() 
-	print(pastSeven)
+	#print(pastSeven)
 	
 func setRate() -> void:
 	var wasNeg = true if rate < 0 else true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=4 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
+[ext_resource type="PackedScene" uid="uid://bg04aobs85lyv" path="res://television.tscn" id="3_1l420"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -23,3 +24,5 @@ script = ExtResource("1_neleb")
 [node name="Hospitality" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
+
+[node name="TV" parent="." instance=ExtResource("3_1l420")]
