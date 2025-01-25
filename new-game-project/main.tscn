@@ -1,33 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyixc4dt4iwpt"]
+[gd_scene load_steps=3 format=3 uid="uid://cyixc4dt4iwpt"]
 
-[ext_resource type="Script" path="res://camera_2d.gd" id="1_ciai2"]
 [ext_resource type="Script" path="res://main.gd" id="1_rukx3"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6cvry"]
 
 [node name="Node2D" type="Node2D"]
+z_index = -1
 script = ExtResource("1_rukx3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("1_ciai2")
-
 [node name="MainTitle" type="RichTextLabel" parent="."]
+z_index = -1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -577.0
-offset_top = -325.5
-offset_right = 577.0
-offset_bottom = 325.5
+offset_left = -576.0
+offset_top = -324.5
+offset_right = 578.0
+offset_bottom = 326.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 text = "Main Menu"
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="MainTitle"]
+z_index = -1
 layout_mode = 0
 offset_left = 526.0
 offset_top = 395.0
@@ -35,16 +36,20 @@ offset_right = 629.0
 offset_bottom = 435.0
 text = "Play"
 icon = SubResource("PlaceholderTexture2D_6cvry")
+metadata/_edit_use_anchors_ = true
 
 [node name="EndScreen" type="RichTextLabel" parent="."]
 visible = false
-offset_left = -575.0
-offset_top = -328.0
-offset_right = 574.0
-offset_bottom = 322.0
+z_index = -1
+offset_left = -574.0
+offset_top = -327.0
+offset_right = 575.0
+offset_bottom = 323.0
+mouse_filter = 2
 text = "Game Over"
 
 [node name="Button" type="Button" parent="EndScreen"]
+z_index = -1
 offset_left = 522.0
 offset_top = 396.0
 offset_right = 625.0
@@ -54,13 +59,16 @@ icon = SubResource("PlaceholderTexture2D_6cvry")
 
 [node name="Game" type="RichTextLabel" parent="."]
 visible = false
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 323.0
+z_index = -1
+offset_left = -575.0
+offset_top = -323.0
+offset_right = 577.0
+offset_bottom = 324.0
+mouse_filter = 2
 text = "Game"
 
 [node name="Button" type="Button" parent="Game"]
+z_index = -1
 offset_left = 1024.0
 offset_top = 18.0
 offset_right = 1127.0
@@ -70,13 +78,16 @@ icon = SubResource("PlaceholderTexture2D_6cvry")
 
 [node name="Pause" type="RichTextLabel" parent="."]
 visible = false
-offset_left = -572.0
-offset_top = -328.0
-offset_right = 574.0
-offset_bottom = 325.0
+z_index = -1
+offset_left = -571.0
+offset_top = -327.0
+offset_right = 575.0
+offset_bottom = 326.0
+mouse_filter = 2
 text = "Pause"
 
 [node name="Button" type="Button" parent="Pause"]
+z_index = -1
 offset_left = 521.0
 offset_top = 461.0
 offset_right = 624.0
@@ -85,6 +96,7 @@ text = "Quit"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 
 [node name="Button2" type="Button" parent="Pause"]
+z_index = -1
 offset_left = 521.0
 offset_top = 398.0
 offset_right = 624.0

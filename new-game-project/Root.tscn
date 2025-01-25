@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=8 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
-[ext_resource type="PackedScene" path="res://television.tscn" id="3_1l420"]
+[ext_resource type="PackedScene" uid="uid://cxftc47nig0qy" path="res://television.tscn" id="3_1l420"]
 [ext_resource type="PackedScene" path="res://radio.tscn" id="4_7c415"]
+[ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="6_0ukna"]
+[ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -27,5 +30,18 @@ script = ExtResource("1_neleb")
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
+offset_left = -369.0
+offset_top = -84.0
+offset_right = -161.0
+offset_bottom = 124.0
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
+position = Vector2(355, 10)
+
+[node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
+position = Vector2(1112, 48)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("6_0ukna")
+
+[node name="Node2D" parent="." instance=ExtResource("6_3kxvd")]

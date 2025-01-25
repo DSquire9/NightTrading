@@ -1,6 +1,6 @@
 extends Node2D
 
-var paused = false
+var paused = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +15,7 @@ func _process(delta):
 func _on_button_pressed():
 	get_node("MainTitle").visible = false
 	get_node("Game").visible = true
+	paused = false
 
 
 func _on_end_button_pressed():
