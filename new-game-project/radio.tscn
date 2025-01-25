@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvawuun0n7pwo"]
+
+[ext_resource type="Script" path="res://radio.gd" id="1_yqdmr"]
+[ext_resource type="Script" path="res://click_object.gd" id="2_ho8ka"]
+[ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="2_sfr6j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tuwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sfr6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Radio" type="AnimatedSprite2D"]
+position = Vector2(572, 257)
+sprite_frames = SubResource("SpriteFrames_1tuwb")
+script = ExtResource("1_yqdmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_sfr6j")
+script = ExtResource("2_ho8ka")
+
+[connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]
