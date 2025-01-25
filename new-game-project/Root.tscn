@@ -68,30 +68,31 @@ script = ExtResource("2_lumtb")
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
-offset_left = 314.0
-offset_top = 276.0
-offset_right = 522.0
-offset_bottom = 484.0
+offset_left = 2243.0
+offset_top = 309.0
+offset_right = 2451.0
+offset_bottom = 517.0
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
-offset_left = 899.0
-offset_top = 278.0
-offset_right = 1107.0
-offset_bottom = 486.0
+offset_left = 2312.0
+offset_top = 116.0
+offset_right = 2520.0
+offset_bottom = 324.0
 scale = Vector2(1.04538, 0.861223)
 
 [node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
-offset_left = 1779.0
-offset_top = 307.0
-offset_right = 1915.0
-offset_bottom = 443.0
+offset_left = 1005.0
+offset_top = 437.0
+offset_right = 1141.0
+offset_bottom = 573.0
 
 [node name="Informant" parent="." instance=ExtResource("6_y8eel")]
-offset_left = 1463.0
-offset_top = 261.0
-offset_right = 1671.0
-offset_bottom = 469.0
+offset_left = 1646.0
+offset_top = 225.0
+offset_right = 1854.0
+offset_bottom = 433.0
 icon = ExtResource("7_5y2fr")
 
 [node name="Node2D" parent="." instance=ExtResource("6_3kxvd")]
+visible = false
 position = Vector2(683, 360)
