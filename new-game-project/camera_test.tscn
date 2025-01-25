@@ -15,6 +15,11 @@ scale = Vector2(1169, 671)
 texture = SubResource("PlaceholderTexture2D_8edjc")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(4000, -16)
+position = Vector2(3000, -16)
+scale = Vector2(1169, 671)
+texture = SubResource("PlaceholderTexture2D_8edjc")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1500, 0)
 scale = Vector2(1169, 671)
 texture = SubResource("PlaceholderTexture2D_8edjc")
