@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://f1nv7cmurk1q"]
+[gd_scene load_steps=2 format=3 uid="uid://bjr4rcfjctq5c"]
 
-[ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="1_8v3ew"]
 [ext_resource type="Script" path="res://informant.gd" id="2_km07y"]
 
 [node name="Informant" type="Button"]
@@ -9,10 +8,5 @@ offset_top = 15.0
 offset_right = 1127.0
 offset_bottom = 127.0
 script = ExtResource("2_km07y")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(58.0001, 55)
-scale = Vector2(0.57, 0.56)
-texture = ExtResource("1_8v3ew")
 
 [connection signal="button_up" from="." to="." method="_on_button_up"]

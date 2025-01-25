@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=9 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dkxorndbow4gi" path="res://radio.tscn" id="4_7c415"]
 [ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
 [ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
+[ext_resource type="PackedScene" uid="uid://bjr4rcfjctq5c" path="res://informant.tscn" id="6_y8eel"]
+[ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="7_5y2fr"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -46,5 +48,12 @@ offset_left = 1096.0
 offset_top = -53.0
 offset_right = 1232.0
 offset_bottom = 83.0
+
+[node name="Informant" parent="." instance=ExtResource("6_y8eel")]
+offset_left = 780.0
+offset_top = -99.0
+offset_right = 988.0
+offset_bottom = 109.0
+icon = ExtResource("7_5y2fr")
 
 [node name="Node2D" parent="." instance=ExtResource("6_3kxvd")]
