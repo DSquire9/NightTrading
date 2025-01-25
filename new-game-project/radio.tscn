@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvawuun0n7pwo"]
+[gd_scene load_steps=6 format=3 uid="uid://bvawuun0n7pwo"]
 
+[ext_resource type="Texture2D" uid="uid://tq0t4hm6yyyh" path="res://Sprites/Radio.png" id="1_bq5o5"]
 [ext_resource type="Script" path="res://radio.gd" id="1_yqdmr"]
 [ext_resource type="Script" path="res://click_object.gd" id="2_ho8ka"]
 [ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="2_sfr6j"]
@@ -8,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_sfr6j")
+"texture": ExtResource("1_bq5o5")
 }],
 "loop": true,
 "name": &"default",
