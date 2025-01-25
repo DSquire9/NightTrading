@@ -33,9 +33,9 @@ func informant_event() -> void:
 		var positive = true if randi() % 2 == 0 else false
 		var stockName = stocks[eventType].name
 		if positive:
-			print("Positive " + stockName + " event")
+			print("Positive " + stockName + " informant event")
 		else:
-			print("Negative " + stockName + " event")
+			print("Negative " + stockName + " informant event")
 		#$UI.InformantTrigger(stockName, positive)
 		stocks[eventType].eventTrigger(positive)
 		
