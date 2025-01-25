@@ -1,9 +1,10 @@
 extends Node
 signal stockPop
 
-@export var currPrice = 0
-@export var pastPrice = 0
+@export var currPrice = 1
+@export var pastPrice = 1
 @export var rateChangeIn = 0
+@export var pastSeven = [0,0,0,0,0,0,0]
 var bubbleMin = 500
 var bubbleMax = 750
 var rate = 0
@@ -34,6 +35,8 @@ func _process(delta: float) -> void:
 			setRateChange()
 
 func update() -> void:
+	pastSeven.pop_front()
+	pastSeven.push_back(currPrice)
 	pastPrice = currPrice
 	currPrice += rate
 	# Floor the price at zero
@@ -50,7 +53,7 @@ func update() -> void:
 	# pop if we hit the chance
 	if currPrice >= bubbleMax or randf() <= float(currPrice - bubbleMin) / float(bubbleMax - bubbleMin):
 		pop() 
-	print(currPrice)
+	print(pastSeven)
 	
 func setRate() -> void:
 	var wasNeg = true if rate < 0 else true

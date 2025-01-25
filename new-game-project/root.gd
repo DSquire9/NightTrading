@@ -45,6 +45,9 @@ func setTimer() -> void:
 func getTVTrend(channel) -> bool:
 	var stock = stocks[channel]
 	return true if stock.pastPrice < stock.currPrice else false
+
+func getPastSeven(channel) -> Array:
+	return stocks[channel].pastSeven
 	
 func getRadioPrediction(channel) -> bool:
 	return stocks[channel].getPrediction()
