@@ -13,3 +13,8 @@ script = ExtResource("1_wk5mv")
 position = Vector2(-4.50003, 3.5)
 scale = Vector2(1169, 671)
 texture = SubResource("PlaceholderTexture2D_8edjc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(4000, -16)
+scale = Vector2(1169, 671)
+texture = SubResource("PlaceholderTexture2D_8edjc")
