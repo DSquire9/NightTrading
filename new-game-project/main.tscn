@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyixc4dt4iwpt"]
+
+[ext_resource type="Script" path="res://camera_2d.gd" id="1_ciai2"]
+[ext_resource type="Script" path="res://main.gd" id="1_rukx3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6cvry"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rukx3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_ciai2")
+
+[node name="MainTitle" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -325.5
+offset_right = 577.0
+offset_bottom = 325.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Main Menu"
+
+[node name="Button" type="Button" parent="MainTitle"]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 395.0
+offset_right = 629.0
+offset_bottom = 435.0
+text = "Play"
+icon = SubResource("PlaceholderTexture2D_6cvry")
+
+[node name="EndScreen" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -575.0
+offset_top = -328.0
+offset_right = 574.0
+offset_bottom = 322.0
+text = "Game Over"
+
+[node name="Button" type="Button" parent="EndScreen"]
+offset_left = 522.0
+offset_top = 396.0
+offset_right = 625.0
+offset_bottom = 436.0
+text = "Main Menu"
+icon = SubResource("PlaceholderTexture2D_6cvry")
+
+[node name="Game" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 323.0
+text = "Game"
+
+[node name="Button" type="Button" parent="Game"]
+offset_left = 1024.0
+offset_top = 18.0
+offset_right = 1127.0
+offset_bottom = 58.0
+text = "Pause"
+icon = SubResource("PlaceholderTexture2D_6cvry")
+
+[node name="Pause" type="RichTextLabel" parent="."]
+visible = false
+offset_left = -572.0
+offset_top = -328.0
+offset_right = 574.0
+offset_bottom = 325.0
+text = "Pause"
+
+[node name="Button" type="Button" parent="Pause"]
+offset_left = 521.0
+offset_top = 461.0
+offset_right = 624.0
+offset_bottom = 501.0
+text = "Quit"
+icon = SubResource("PlaceholderTexture2D_6cvry")
+
+[node name="Button2" type="Button" parent="Pause"]
+offset_left = 521.0
+offset_top = 398.0
+offset_right = 624.0
+offset_bottom = 438.0
+text = "Resume"
+icon = SubResource("PlaceholderTexture2D_6cvry")
+
+[connection signal="pressed" from="MainTitle/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="EndScreen/Button" to="." method="_on_end_button_pressed"]
+[connection signal="pressed" from="Game/Button" to="." method="_on_game_button_pressed"]
+[connection signal="pressed" from="Pause/Button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Pause/Button2" to="." method="_on_pause_button_2_pressed"]
