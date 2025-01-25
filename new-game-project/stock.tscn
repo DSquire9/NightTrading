@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7px1dwva0wpc"]
+
+[ext_resource type="Script" path="res://Scripts/StockPrice.gd" id="1_5usn7"]
+
+[node name="Stock" type="Node"]
+script = ExtResource("1_5usn7")
