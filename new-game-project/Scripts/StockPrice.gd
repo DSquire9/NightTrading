@@ -1,4 +1,4 @@
-extends Node
+class_name StockInstance extends Node
 signal stockPop
 
 @export var currPrice = 1
@@ -14,6 +14,8 @@ var deltCountPriceChange = 0.0
 var deltCountRateChange = 0.0
 var popped = false
 var popGoal = 0
+
+var stock_name = "";
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

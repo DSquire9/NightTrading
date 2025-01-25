@@ -1,8 +1,9 @@
 extends Node
 
 @export var timeBetweenInformantEventsInSeconds = 1.0;
+@export var initial_n_stocks = 8.0;
 
-var stocks = []
+@onready var stocks = $Stocks;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -12,7 +13,7 @@ var isInformantEventsOn = false:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	stocks = $Stocks.get_children()
+	stocks.n_stocks = initial_n_stocks;
 	isInformantEventsOn = true;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,20 +29,20 @@ func start_informant_event_timer() -> void:
 		start_informant_event_timer()
 
 func trigger_informant_event() -> void:
-	var n_stocks = stocks.size();
+	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
 	var eventType = randi() % (n_stocks+n_blanks)
 	if eventType >= n_stocks:
 		print("No Event")
 	else:
 		var positive: bool = (randi() % 2 == 0)
-		var stockName = stocks[eventType].name
+		var stock: StockInstance = stocks.get_stock(eventType);
 		if positive:
-			print("Positive " + stockName + " informant event")
+			print("Positive " + stock.stock_name + " informant event")
 		else:
-			print("Negative " + stockName + " informant event")
-		$Informant.trigger(stockName, positive)
-		stocks[eventType].eventTrigger(positive)
+			print("Negative " + stock.stock_name + " informant event")
+		$Informant.trigger(stock.stock_name, positive)
+		stocks.get_stock(eventType).eventTrigger(positive)
 
 func getTVTrend(channel) -> bool:
 	var stock = stocks[channel]
