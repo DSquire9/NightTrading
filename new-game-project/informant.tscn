@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://f1nv7cmurk1q"]
+
+[ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="1_8v3ew"]
+[ext_resource type="Script" path="res://click_object.gd" id="2_karwk"]
+[ext_resource type="Script" path="res://informant.gd" id="2_km07y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxhi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8v3ew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Informant" type="AnimatedSprite2D"]
+position = Vector2(1049, 111)
+sprite_frames = SubResource("SpriteFrames_cxhi4")
+script = ExtResource("2_km07y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_8v3ew")
+script = ExtResource("2_karwk")
+
+[connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]

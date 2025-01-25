@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxftc47nig0qy"]
 
-[ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="1_aepp0"]
+[ext_resource type="Texture2D" uid="uid://dh7okib538csc" path="res://Sprites/TV.png" id="1_ejnpu"]
 [ext_resource type="Script" path="res://click_object.gd" id="2_1025d"]
 [ext_resource type="Script" path="res://television.gd" id="2_bgo6t"]
 
@@ -8,7 +8,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_aepp0")
+"texture": ExtResource("1_ejnpu")
 }],
 "loop": true,
 "name": &"default",
@@ -17,7 +17,8 @@ animations = [{
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yiekj"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D"]
+position = Vector2(253, 258)
 sprite_frames = SubResource("SpriteFrames_3mweb")
 script = ExtResource("2_bgo6t")
 
