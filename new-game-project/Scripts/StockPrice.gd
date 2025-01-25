@@ -69,3 +69,10 @@ func pop():
 	rate = abs(rate) * -3
 	stockPop.emit()
 	print("pop!")
+
+func eventTrigger(positive):
+	if positive:
+		rate = abs(rate) * 2
+	else:
+		rate = abs(rate) * -2
+	
