@@ -24,3 +24,6 @@ func _on_sprite_2d_object_clicked():
 		mode = 1
 	else:
 		mode += 1
+	var rootNode = get_node("Root")
+	if(rootNode):
+		rootNode.getTVTrend(mode)
