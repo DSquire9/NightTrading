@@ -1,4 +1,5 @@
 extends Node
+signal stockPop
 
 @export var currPrice = 0
 @export var rateChangeIn = 0
@@ -34,8 +35,8 @@ func _process(delta: float) -> void:
 func update() -> void:
 	currPrice += rate
 	# Floor the price at zero
-	if currPrice < 0:
-		currPrice = 0
+	if currPrice < 1:
+		currPrice = 1
 		
 	# Check to see if we've reached the pop goal to stabilize the stock
 	if popped:
@@ -66,4 +67,5 @@ func pop():
 	popped = true
 	popGoal = currPrice / 10
 	rate = abs(rate) * -3
+	stockPop.emit()
 	print("pop!")
