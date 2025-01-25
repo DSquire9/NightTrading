@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=6 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock.tscn" id="2_kdqgx"]
-[ext_resource type="PackedScene" path="res://television.tscn" id="3_1l420"]
-[ext_resource type="PackedScene" path="res://radio.tscn" id="4_7c415"]
+[ext_resource type="PackedScene" uid="uid://bg04aobs85lyv" path="res://television.tscn" id="3_1l420"]
+[ext_resource type="PackedScene" uid="uid://bvawuun0n7pwo" path="res://radio.tscn" id="4_7c415"]
+[ext_resource type="PackedScene" uid="uid://f1nv7cmurk1q" path="res://informant.tscn" id="5_i0ejg"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -29,3 +30,5 @@ script = ExtResource("1_neleb")
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
+
+[node name="Informant" parent="." instance=ExtResource("5_i0ejg")]
