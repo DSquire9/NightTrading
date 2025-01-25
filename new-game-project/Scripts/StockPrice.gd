@@ -1,4 +1,5 @@
 extends Node
+signal stockPop
 
 @export var currPrice = 0
 @export var rateChangeIn = 0
@@ -66,4 +67,5 @@ func pop():
 	popped = true
 	popGoal = currPrice / 10
 	rate = abs(rate) * -3
+	stockPop.emit()
 	print("pop!")
