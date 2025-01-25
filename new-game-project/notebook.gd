@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Button
 
 var currentStock = 1
 var sellbuy = true

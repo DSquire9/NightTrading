@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Button
 
 var modes = 7
 var mode = 0

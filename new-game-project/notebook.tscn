@@ -1,35 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhnpxedauxc14"]
+[gd_scene load_steps=4 format=3 uid="uid://dhnpxedauxc14"]
 
 [ext_resource type="Texture2D" uid="uid://biio4otefshnv" path="res://icon.svg" id="1_ydbsk"]
 [ext_resource type="Script" path="res://notebook.gd" id="2_ik47q"]
-[ext_resource type="Script" path="res://click_object.gd" id="2_m1mu5"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3mweb"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ydbsk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yiekj"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2mxde"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_3mweb")
+[node name="AnimatedSprite2D" type="Button"]
+icon = ExtResource("1_ydbsk")
 script = ExtResource("2_ik47q")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-z_index = -1
-position = Vector2(-8.19564e-06, -1.00434e-05)
-scale = Vector2(130, 130)
-texture = SubResource("PlaceholderTexture2D_yiekj")
-script = ExtResource("2_m1mu5")
 
 [node name="notepad" type="TextureRect" parent="."]
 visible = false
@@ -186,7 +164,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "$10568.78"
 
-[connection signal="object_clicked" from="Sprite2D" to="." method="_on_sprite_2d_object_clicked"]
+[connection signal="pressed" from="." to="." method="_on_sprite_2d_object_clicked"]
 [connection signal="pressed" from="notepad/confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="notepad/buy" to="." method="_on_buy_button_pressed"]
 [connection signal="pressed" from="notepad/sell" to="." method="_on_sell_button_pressed"]

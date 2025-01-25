@@ -19,16 +19,16 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_released("move camera left") && !(currentScreen < 1)):
 		currentScreen = currentScreen - 1
 		t = 0.0
-		start = offset
+		start = position
 		moving = true
 	if(Input.is_action_just_released("move camera right") && !(currentScreen >= screens.size() - 1)):
 		currentScreen = currentScreen + 1
 		t = 0.0
-		start = offset
+		start = position
 		moving = true
 	
-	offset = start.lerp(Vector2(screens[currentScreen],0), t)
+	position = start.lerp(Vector2(screens[currentScreen],0), t)
 	if(t >= 1.0):
 		t = 0.0
-		start = offset
+		start = position
 		moving = false
