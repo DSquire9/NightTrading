@@ -28,11 +28,13 @@ func start_informant_event_timer() -> void:
 		start_informant_event_timer()
 
 func trigger_informant_event() -> void:
-	var eventType = randi() % 9
-	if eventType == 8:
+	var n_stocks = stocks.size();
+	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
+	var eventType = randi() % (n_stocks+n_blanks)
+	if eventType >= n_stocks:
 		print("No Event")
 	else:
-		var positive = true if randi() % 2 == 0 else false
+		var positive: bool = (randi() % 2 == 0)
 		var stockName = stocks[eventType].name
 		if positive:
 			print("Positive " + stockName + " informant event")
