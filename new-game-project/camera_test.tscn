@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjk0tkqc0m7v8"]
+
+[ext_resource type="Script" path="res://camera_2d.gd" id="1_wk5mv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8edjc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_wk5mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.50003, 3.5)
+scale = Vector2(1169, 671)
+texture = SubResource("PlaceholderTexture2D_8edjc")
