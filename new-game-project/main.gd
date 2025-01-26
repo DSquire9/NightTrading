@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var paused = true
 
@@ -13,28 +13,28 @@ func _process(_delta):
 
 
 func _on_button_pressed():
-	get_node("Camera2D/MainTitle").visible = false
-	get_node("Camera2D/Game").visible = true
+	get_node("MainTitle").visible = false
+	get_node("Game").visible = true
 	paused = false
 
 
 func _on_end_button_pressed():
-	get_node("Camera2D/EndScreen").visible = false
-	get_node("Camera2D/MainTitle").visible = true
+	get_node("EndScreen").visible = false
+	get_node("MainTitle").visible = true
 
 
 func _on_game_button_pressed():
-	get_node("Camera2D/Game").visible = false
-	get_node("Camera2D/Pause").visible = true 
+	get_node("Game").visible = false
+	get_node("Pause").visible = true 
 	paused = true
 
 
 func _on_pause_button_pressed():
-	get_node("Camera2D/Pause").visible = false
-	get_node("Camera2D/EndScreen").visible = true
+	get_node("Pause").visible = false
+	get_node("EndScreen").visible = true
 	paused = false
 
 
 func _on_pause_button_2_pressed():
-	get_node("Camera2D/Pause").visible = false
-	get_node("Camera2D/Game").visible = true
+	get_node("Pause").visible = false
+	get_node("Game").visible = true

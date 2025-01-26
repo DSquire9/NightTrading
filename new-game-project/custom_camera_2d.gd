@@ -1,6 +1,6 @@
-extends Camera2D
+class_name CustomCamera2D extends Camera2D
 
-var screens = [0, 1400]
+var screens = [0, 7680]
 var currentScreen = 0
 var t = 0.0
 var start = Vector2(0,0)

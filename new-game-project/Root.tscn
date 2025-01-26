@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=14 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock_instance.tscn" id="2_kdqgx"]
@@ -12,9 +12,14 @@
 [ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
 [ext_resource type="PackedScene" uid="uid://bjr4rcfjctq5c" path="res://informant.tscn" id="6_y8eel"]
 [ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="7_5y2fr"]
+[ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("13_okbna")
 
 [node name="Background" type="Node" parent="."]
 
@@ -22,10 +27,10 @@ script = ExtResource("1_neleb")
 
 [node name="ColorRect" type="ColorRect" parent="Background/TheDarknessBehindItAll"]
 z_index = -4096
-offset_left = -93.0
-offset_top = -91.0
-offset_right = 2869.0
-offset_bottom = 791.0
+offset_left = -308.0
+offset_top = -223.0
+offset_right = 11813.0
+offset_bottom = 2439.0
 color = Color(0, 0, 0, 1)
 
 [node name="ComputerView" type="Node" parent="Background"]
@@ -33,16 +38,14 @@ color = Color(0, 0, 0, 1)
 [node name="TextureRect" type="TextureRect" parent="Background/ComputerView"]
 offset_right = 3840.0
 offset_bottom = 2160.0
-scale = Vector2(0.33, 0.33)
 texture = ExtResource("2_px1m4")
 
 [node name="TelevisionView" type="Node" parent="Background"]
 
 [node name="TextureRect" type="TextureRect" parent="Background/TelevisionView"]
-offset_left = 1400.0
-offset_right = 5240.0
+offset_left = 7680.0
+offset_right = 11520.0
 offset_bottom = 2160.0
-scale = Vector2(0.33, 0.33)
 texture = ExtResource("3_ddl0e")
 
 [node name="InformantManager" type="Node" parent="."]
@@ -68,31 +71,30 @@ script = ExtResource("2_lumtb")
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
-offset_left = 2243.0
-offset_top = 309.0
-offset_right = 2451.0
-offset_bottom = 517.0
+offset_left = 10450.0
+offset_top = 1126.0
+offset_right = 10658.0
+offset_bottom = 1334.0
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
-offset_left = 2312.0
-offset_top = 116.0
-offset_right = 2520.0
-offset_bottom = 324.0
+offset_left = 10601.0
+offset_top = 637.0
+offset_right = 10809.0
+offset_bottom = 845.0
 scale = Vector2(1.04538, 0.861223)
 
 [node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
-offset_left = 1005.0
-offset_top = 437.0
-offset_right = 1141.0
-offset_bottom = 573.0
+offset_left = 3196.0
+offset_top = 1429.0
+offset_right = 3332.0
+offset_bottom = 1565.0
 
 [node name="Informant" parent="." instance=ExtResource("6_y8eel")]
-offset_left = 1646.0
-offset_top = 225.0
-offset_right = 1854.0
-offset_bottom = 433.0
+offset_left = 8612.0
+offset_top = 625.0
+offset_right = 8820.0
+offset_bottom = 833.0
 icon = ExtResource("7_5y2fr")
 
-[node name="Node2D" parent="." instance=ExtResource("6_3kxvd")]
-visible = false
-position = Vector2(683, 360)
+[node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
+z_index = 1000

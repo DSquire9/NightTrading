@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://lwitjsuophae"]
 
 [ext_resource type="Script" path="res://timer.gd" id="1_d5sut"]
-[ext_resource type="FontFile" uid="uid://jy02x4aej2to" path="res://fonts/W95FA/W95FA/W95FA.otf" id="2_gjvro"]
+[ext_resource type="FontFile" uid="uid://cki7efy2kwdd" path="res://fonts/W95FA/W95FA/W95FA.otf" id="2_gjvro"]
 [ext_resource type="Script" path="res://label.gd" id="2_mpyrv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5k3a4"]
