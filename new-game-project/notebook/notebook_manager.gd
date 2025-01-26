@@ -1,5 +1,7 @@
 class_name NotebookManager extends Node
 
+const base_file_path = "res://resources/images/";
+
 signal notebook_updated(location, tab);
 
 enum NotebookLocation {
@@ -11,7 +13,16 @@ enum NotebookLocation {
 var location: NotebookLocation = NotebookLocation.DESK;
 var tab: int = -1;
 
+@onready var notebook: TextureRect = $TextureRect;
+
 func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab ) -> void:
 	location = a_location;
 	tab = a_tab;
 	notebook_updated.emit(location, tab);
+	match location:
+		NotebookLocation.FOCUS_CLOSED:
+			notebook.texture = load(base_file_path + "Notebook_UpClosed.png");
+		NotebookLocation.FOCUS_OPEN:
+			notebook.texture = load(base_file_path + "Notebook_UpOpen.png");
+		_:
+			notebook.texture = null;

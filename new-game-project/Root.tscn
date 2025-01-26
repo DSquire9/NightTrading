@@ -54,6 +54,13 @@ texture = ExtResource("3_ddl0e")
 [node name="NotebookManager" type="Node" parent="."]
 script = ExtResource("6_mrv1e")
 
+[node name="TextureRect" type="TextureRect" parent="NotebookManager"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="InformantManager" type="Node" parent="."]
 script = ExtResource("2_t0yj5")
 

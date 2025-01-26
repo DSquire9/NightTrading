@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxvwtn0osr7iy"
-path="res://.godot/imported/Planner_UpOpen.png-210854405399425be6f93d43b5f08d5b.ctex"
+uid="uid://binx5xbwm2io5"
+path="res://.godot/imported/Notebook_UpClosed.png-ce7973991979a29241d8ff88213f28c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Planner_UpOpen.png"
-dest_files=["res://.godot/imported/Planner_UpOpen.png-210854405399425be6f93d43b5f08d5b.ctex"]
+source_file="res://resources/images/Notebook_UpClosed.png"
+dest_files=["res://.godot/imported/Notebook_UpClosed.png-ce7973991979a29241d8ff88213f28c7.ctex"]
 
 [params]
 

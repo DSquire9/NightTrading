@@ -34,9 +34,10 @@ func start_informant_event_timer() -> void:
 		start_informant_event_timer()
 
 func trigger_informant_event() -> void:
-	notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_CLOSED);
-	informant_manager.update_informant(InformantManager.InformantLocation.COMPUTER);
-	redraw_backgrounds();
+	## for testing the background / notebook updater
+	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.DESK);
+	#informant_manager.update_informant(InformantManager.InformantLocation.WINDOW);
+	#redraw_backgrounds();
 	
 	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
