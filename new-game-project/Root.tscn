@@ -117,12 +117,14 @@ script = ExtResource("2_lumtb")
 [node name="Manufacturing" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
+visible = false
 offset_left = 10450.0
 offset_top = 1126.0
 offset_right = 10658.0
 offset_bottom = 1334.0
 
 [node name="Radio" parent="." instance=ExtResource("4_7c415")]
+visible = false
 offset_left = 10601.0
 offset_top = 637.0
 offset_right = 10809.0
@@ -130,6 +132,7 @@ offset_bottom = 845.0
 scale = Vector2(1.04538, 0.861223)
 
 [node name="Informant" parent="." instance=ExtResource("6_y8eel")]
+visible = false
 offset_left = 8612.0
 offset_top = 625.0
 offset_right = 8820.0
