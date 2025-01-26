@@ -19,13 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 [ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
+[ext_resource type="PackedScene" uid="uid://ghadtt162jll" path="res://ui/ui_manager.tscn" id="19_x248j"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("13_okbna")
 
 [node name="BackgroundManager" type="Node" parent="."]
 script = ExtResource("3_3fqm6")
@@ -154,13 +151,20 @@ icon = ExtResource("7_5y2fr")
 visible = false
 z_index = 1000
 
-[node name="GameTimer" parent="." instance=ExtResource("2_gybaa")]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("13_okbna")
+
+[node name="GameTimer" parent="Camera2D" instance=ExtResource("2_gybaa")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 100.0
+offset_left = 1595.0
+offset_right = 2245.0
+offset_bottom = 150.0
 grow_horizontal = 2
 
 [node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
+start_time = 10.0
+
+[node name="UIManager" parent="." instance=ExtResource("19_x248j")]
