@@ -56,7 +56,7 @@ func trigger_informant_event() -> void:
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
-	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT", 15.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT", 15.0));
 	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
 	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
 	#await get_tree().create_timer(1.5).timeout

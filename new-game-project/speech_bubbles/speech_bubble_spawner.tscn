@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnfqg1grhhvde"]
+[gd_scene load_steps=4 format=3 uid="uid://bnfqg1grhhvde"]
 
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_spawner.gd" id="1_33ytv"]
 [ext_resource type="Texture2D" uid="uid://cof4vccun4k2r" path="res://resources/images/speech_bubbles/Bubble_Magenta.png" id="2_3ki0j"]
+[ext_resource type="FontFile" uid="uid://cki7efy2kwdd" path="res://fonts/W95FA/W95FA/W95FA.otf" id="3_hauwx"]
 
 [node name="SpeechBubbleSpawner" type="Control"]
 layout_mode = 3
@@ -43,6 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hauwx")
 theme_override_font_sizes/font_size = 64
 text = "This is a test!"
 horizontal_alignment = 1
