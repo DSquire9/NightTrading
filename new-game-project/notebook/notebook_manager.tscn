@@ -15,6 +15,7 @@ bg_color = Color(1, 0.683333, 0, 1)
 
 [node name="NotebookManager" type="Node"]
 script = ExtResource("1_d6gw4")
+notebook_cooldown = null
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
