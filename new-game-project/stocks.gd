@@ -56,7 +56,10 @@ func radio_event():
 	var stock = _stocks_registry[randi() % n_stocks]
 	var type = stock.stock_name
 	var prediction = stock.getPrediction()
-	var s = type + " predicted" + str(prediction)
+	var isUp = "Down"
+	if prediction:
+		isUp = "Up"
+	var s = type + " predicted " + isUp + "!"
 	var data = SpeechBubbleData.new(s, 2.0)
 	get_parent().speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, data)
 	
@@ -64,7 +67,10 @@ func TV_event():
 	var i = randi() % n_stocks
 	var type = _stocks_registry[i].stock_name
 	var trend = get_parent().getTVTrend(i)
-	var s = type + " is " + str(trend)
+	var isUp = "Down"
+	if trend:
+		isUp = "Up"
+	var s = type + " is " + isUp + "!"
 	var data = SpeechBubbleData.new(s, 2.0)
 	get_parent().speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, data)
 
