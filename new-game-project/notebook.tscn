@@ -11,6 +11,7 @@ script = ExtResource("2_ik47q")
 
 [node name="notepad" type="TextureRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -136.0
 offset_top = -183.0
 offset_right = 447.0
@@ -114,6 +115,7 @@ grow_vertical = 2
 text = "Stock 1"
 
 [node name="cancel" type="Button" parent="notepad"]
+layout_mode = 0
 offset_left = 429.727
 offset_top = 656.145
 offset_right = 562.727
@@ -121,6 +123,7 @@ offset_bottom = 720.145
 text = "Cancel"
 
 [node name="subtract" type="Button" parent="notepad"]
+layout_mode = 0
 offset_left = 338.079
 offset_top = 341.115
 offset_right = 455.079
@@ -128,6 +131,7 @@ offset_bottom = 406.115
 text = "-"
 
 [node name="add" type="Button" parent="notepad"]
+layout_mode = 0
 offset_left = 105.904
 offset_top = 339.109
 offset_right = 222.904

@@ -360,6 +360,7 @@ script = ExtResource("9_t4a13")
 
 [node name="CLOSE" type="Button" parent="NotebookUI/CloseNotebookButton"]
 custom_minimum_size = Vector2(150, 150)
+layout_mode = 0
 offset_right = 200.0
 offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("4_7tj8x")

@@ -16,12 +16,12 @@ func _process(delta):
 
 func _on_sprite_2d_object_clicked():
 	Root.notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
-	get_node("notepad").visible = true
+	#get_node("notepad").visible = true
 
 
 func _on_button_pressed():
 	Root.notebook_manager.update_notebook(NotebookManager.NotebookLocation.DESK);
-	get_node("notepad").visible = false
+	#get_node("notepad").visible = false
 
 
 func _on_sell_button_pressed():
