@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dreh5ktpvc7ut"
-path="res://.godot/imported/Screen_TV__Informant_None.png-acc3e369fbad3c0265da262cf0804254.ctex"
+path="res://.godot/imported/Screen_Television__Informant_None.png-afc5ec279e8ca411061493c058112dba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_TV__Informant_None.png"
-dest_files=["res://.godot/imported/Screen_TV__Informant_None.png-acc3e369fbad3c0265da262cf0804254.ctex"]
+source_file="res://resources/images/Screen_Television__Informant_None.png"
+dest_files=["res://.godot/imported/Screen_Television__Informant_None.png-afc5ec279e8ca411061493c058112dba.ctex"]
 
 [params]
 

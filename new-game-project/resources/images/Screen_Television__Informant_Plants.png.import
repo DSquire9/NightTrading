@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf03feekqbj8"
-path="res://.godot/imported/Screen_TV__Informant_Plants.png-1dc6b7a01add5e8a3395236ba0a1866e.ctex"
+path="res://.godot/imported/Screen_Television__Informant_Plants.png-72d4ca2f7371db76e915ea66bd62bf0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_TV__Informant_Plants.png"
-dest_files=["res://.godot/imported/Screen_TV__Informant_Plants.png-1dc6b7a01add5e8a3395236ba0a1866e.ctex"]
+source_file="res://resources/images/Screen_Television__Informant_Plants.png"
+dest_files=["res://.godot/imported/Screen_Television__Informant_Plants.png-72d4ca2f7371db76e915ea66bd62bf0a.ctex"]
 
 [params]
 

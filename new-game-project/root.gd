@@ -18,6 +18,7 @@ var isInformantEventsOn = false:
 func _ready() -> void:
 	stocks.n_stocks = initial_n_stocks;
 	isInformantEventsOn = true;
+	notebook_manager.notebook_updated.connect(on_notebook_updated);
 	informant_manager.informant_updated.connect(on_informant_updated);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +34,10 @@ func start_informant_event_timer() -> void:
 		start_informant_event_timer()
 
 func trigger_informant_event() -> void:
+	notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_CLOSED);
+	informant_manager.update_informant(InformantManager.InformantLocation.COMPUTER);
+	redraw_backgrounds();
+	
 	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
 	var eventType = randi() % (n_stocks+n_blanks)
@@ -60,11 +65,14 @@ func getRadioPrediction(channel) -> bool:
 
 
 ## For Redrawing Scene
+func on_notebook_updated( _location: NotebookManager.NotebookLocation, _tab: int ):
+	redraw_backgrounds();
+
 func on_informant_updated( _location: InformantManager.InformantLocation, _message: String ):
 	redraw_backgrounds();
 
 func redraw_backgrounds():
-	var notebook_location: NotebookManager.NotebookLocation = notebook_manager.notebook_location;
-	var informant_location: InformantManager.InformantLocation = informant_manager.informant_location;
+	var notebook_location: NotebookManager.NotebookLocation = notebook_manager.location;
+	var informant_location: InformantManager.InformantLocation = informant_manager.location;
 	var background_data: BackgroundData = BackgroundData.new(notebook_location, informant_location);
 	background_manager.update_background(background_data);
