@@ -13,6 +13,9 @@ enum NotebookLocation {
 var location: NotebookLocation = NotebookLocation.DESK;
 var tab: int = -1;
 
+const notebook_up_closed: Texture = preload(base_file_path + "Notebook_UpClosed.png");
+const notebook_up_open: Texture = preload(base_file_path + "Notebook_UpOpen.png");
+
 @onready var notebook: TextureRect = $TextureRect;
 
 func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab ) -> void:
@@ -21,8 +24,8 @@ func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab 
 	notebook_updated.emit(location, tab);
 	match location:
 		NotebookLocation.FOCUS_CLOSED:
-			notebook.texture = load(base_file_path + "Notebook_UpClosed.png");
+			notebook.texture = notebook_up_closed;
 		NotebookLocation.FOCUS_OPEN:
-			notebook.texture = load(base_file_path + "Notebook_UpOpen.png");
+			notebook.texture = notebook_up_open;
 		_:
 			notebook.texture = null;

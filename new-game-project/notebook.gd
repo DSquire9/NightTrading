@@ -2,7 +2,7 @@ class_name Notebook extends Button
 
 var currentStock = 1
 var sellbuy = true
-var Root
+var Root: GameManager
 var quantity = 1
 var price = 156789.89
 
@@ -15,10 +15,12 @@ func _process(delta):
 	get_node("notepad/price").text = "$" + str(price)
 
 func _on_sprite_2d_object_clicked():
+	Root.notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
 	get_node("notepad").visible = true
 
 
 func _on_button_pressed():
+	Root.notebook_manager.update_notebook(NotebookManager.NotebookLocation.DESK);
 	get_node("notepad").visible = false
 
 
