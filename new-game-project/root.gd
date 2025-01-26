@@ -59,10 +59,10 @@ func trigger_informant_event() -> void:
 		var positive: bool = (randi() % 2 == 0)
 		var stock: StockInstance = stocks.get_stock(eventType);
 		if positive:
-			print("Positive " + stock.stock_name + " informant event")
+			$Stocks.informant_event(stock.stock_name + " Will Go Up...")
 		else:
-			print("Negative " + stock.stock_name + " informant event")
-		$Informant.trigger(stock.stock_name, positive)
+			$Stocks.informant_event(stock.stock_name + " Will Go Down...")
+		#$Informant.trigger(stock.stock_name, positive)
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
