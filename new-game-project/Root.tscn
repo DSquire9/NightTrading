@@ -112,29 +112,31 @@ identity = 4
 [node name="Stocks" type="Node" parent="."]
 script = ExtResource("2_lumtb")
 
-[node name="Tech" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Business" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Consumer_Goods" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Energy_Water" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Finance" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Healthcare" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Hospitality" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
-[node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
-
 [node name="TV_Timer" type="Timer" parent="Stocks"]
 wait_time = 5.0
 autostart = true
 
 [node name="Radio_Timer" type="Timer" parent="Stocks"]
-wait_time = 5.0
+wait_time = 7.0
 autostart = true
+
+[node name="ActiveStocks" type="Node" parent="Stocks"]
+
+[node name="Tech" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Business" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Consumer_Goods" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Energy_Water" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Finance" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Healthcare" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Hospitality" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
+
+[node name="Manufacturing" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
 
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
 offset_left = 10450.0
