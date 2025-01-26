@@ -145,4 +145,5 @@ offset_bottom = 833.0
 icon = ExtResource("7_5y2fr")
 
 [node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
+visible = false
 z_index = 1000

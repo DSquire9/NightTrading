@@ -1,6 +1,6 @@
 class_name GameManager extends Node
 
-@export var timeBetweenInformantEventsInSeconds: float = 1.0;
+@export var timeBetweenInformantEventsInSeconds: float = 3.0;
 @export var initial_n_stocks: int = 8;
 
 @onready var stocks: Stocks = $Stocks;
@@ -56,13 +56,10 @@ func trigger_informant_event() -> void:
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT", 15.0));
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
-	print("beep");
-	
-	await get_tree().create_timer(0.5).timeout
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
-	print("boop");
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT", 15.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
+	#await get_tree().create_timer(1.5).timeout
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
 
 func getTVTrend(channel) -> bool:
 	var stock = stocks.get_stock(channel)
