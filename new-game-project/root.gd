@@ -3,6 +3,8 @@ class_name GameManager extends Node
 @export var timeBetweenInformantEventsInSeconds: float = 2.0;
 @export var initial_n_stocks: int = 8;
 
+@onready var game_timer: GameTimer = $GameTimer;
+
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
 @onready var informant_manager: InformantManager = $InformantManager;
@@ -21,6 +23,14 @@ func _ready() -> void:
 	isInformantEventsOn = true;
 	notebook_manager.notebook_updated.connect(on_notebook_updated);
 	informant_manager.informant_updated.connect(on_informant_updated);
+	
+	game_timer.timer_started.connect(on_timer_started);
+	game_timer.timer_paused.connect(on_timer_paused);
+	game_timer.timer_last_minute.connect(on_timer_last_minute);
+	game_timer.timer_ended.connect(on_timer_ended);
+	
+	# this will eventually be done by "start game" button
+	game_timer.start();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -39,7 +49,7 @@ func trigger_informant_event() -> void:
 	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
 	#informant_manager.update_informant(InformantManager.InformantLocation.COMPUTER);
 	#redraw_backgrounds();
-	
+
 	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
 	var eventType = randi() % (n_stocks+n_blanks)
@@ -56,11 +66,11 @@ func trigger_informant_event() -> void:
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT", 15.0));
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
-	await get_tree().create_timer(1.5).timeout
-	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT", 15.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
+	#await get_tree().create_timer(1.5).timeout
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
 
 func getTVTrend(channel) -> bool:
 	var stock = stocks.get_stock(channel)
@@ -85,3 +95,43 @@ func redraw_backgrounds():
 	var informant_location: InformantManager.InformantLocation = informant_manager.location;
 	var background_data: BackgroundData = BackgroundData.new(notebook_location, informant_location);
 	background_manager.update_background(background_data);
+
+
+## Timer Effects
+func on_timer_started():
+	#print("START");
+	# let's go!!!
+	# audio general minutes
+	pass
+
+func on_timer_paused():
+	#print("PAUSE");
+	# music stops
+	pass
+
+func on_timer_last_minute():
+	#print("LAST MIN");
+	# audio last minute
+	pass
+
+func on_timer_ended():
+	end_game();
+
+
+## Game Loop Evenets
+func start_game() -> void:
+	notebook_manager.reset();
+	informant_manager.reset();
+	speech_bubble_manager.reset();
+	game_timer.start();
+
+func pause_game() -> void:
+	game_timer.pause();
+
+func unpaused_game() -> void:
+	game_timer.unpause();
+
+func end_game():
+	# show end screen
+	print("game over!")
+	pass

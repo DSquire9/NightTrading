@@ -49,3 +49,8 @@ func _update_style() -> void:
 			label.set("theme_override_colors/font_color", "FFFFFF");
 		_:
 			pass
+
+
+func reset() -> void:
+	text = "";
+	key = 0;

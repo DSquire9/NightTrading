@@ -29,3 +29,7 @@ func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab 
 			notebook.texture = notebook_up_open;
 		_:
 			notebook.texture = null;
+
+func reset() -> void:
+	location = NotebookLocation.DESK;
+	tab = -1;
