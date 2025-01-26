@@ -57,6 +57,7 @@ func trigger_informant_event() -> void:
 	
 	## for testing the speech bubbles
 	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT", 15.0));
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
 	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
 	#await get_tree().create_timer(1.5).timeout
 	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
