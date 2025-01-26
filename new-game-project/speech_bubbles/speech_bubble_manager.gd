@@ -28,3 +28,10 @@ func send_bubble( target: SpeechBubbler, data: SpeechBubbleData ) -> void:
 	if _speech_bubble_spawners.has(target):
 		var relevant_spawner: SpeechBubbleSpawner = _speech_bubble_spawners[target];
 		relevant_spawner.update_bubble(data);
+
+func reset() -> void:
+	radio.reset();
+	television.reset();
+	informant_computer.reset();
+	informant_window.reset();
+	informant_plants.reset();

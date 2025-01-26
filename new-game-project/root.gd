@@ -106,7 +106,7 @@ func on_timer_started():
 
 func on_timer_paused():
 	#print("PAUSE");
-	# idk
+	# music stops
 	pass
 
 func on_timer_last_minute():
@@ -115,6 +115,23 @@ func on_timer_last_minute():
 	pass
 
 func on_timer_ended():
-	#print("END");
-	# game over!
+	end_game();
+
+
+## Game Loop Evenets
+func start_game() -> void:
+	notebook_manager.reset();
+	informant_manager.reset();
+	speech_bubble_manager.reset();
+	game_timer.start();
+
+func pause_game() -> void:
+	game_timer.pause();
+
+func unpaused_game() -> void:
+	game_timer.unpause();
+
+func end_game():
+	# show end screen
+	print("game over!")
 	pass
