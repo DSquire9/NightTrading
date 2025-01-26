@@ -76,6 +76,12 @@ func TV_event():
 	var s = type + " is " + isUp + "!"
 	var data = SpeechBubbleData.new(s, 2.0)
 	get_parent().speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, data)
+	
+func informant_event(message):
+	var location =  (randi() % 3) + 2
+	var data = SpeechBubbleData.new(message,2.0)
+	get_parent().speech_bubble_manager.send_bubble(location, data)
+	get_node("../InformantManager").update_informant(location-2,message)
 
 func _on_tv_timer_timeout() -> void:
 	print("TV TIMER")
