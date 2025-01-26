@@ -11,14 +11,14 @@ var text: String = "":
 		key += 1;
 		text = value;
 
-
 func _ready() -> void:
 	text = "";
 
 func update_bubble(bubble_data: SpeechBubbleData) -> void:
 	text = bubble_data.text;
+	panel_container.set_z_index(Globals.z_index);
 	var key_when_created = key;
-	await get_tree().create_timer(bubble_data.duration_in_seconds).timeout
+	await get_tree().create_timer(bubble_data.duration_in_seconds).timeout;
 	pop_bubble(key_when_created);
 
 func pop_bubble(a_key: int) -> void:

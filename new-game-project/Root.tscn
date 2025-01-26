@@ -70,15 +70,16 @@ script = ExtResource("2_t0yj5")
 script = ExtResource("8_yfoui")
 
 [node name="Radio" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
-offset_left = 7917.0
+offset_left = 7695.0
 offset_top = -539.0
 offset_right = 8417.0
-offset_bottom = -289.0
+offset_bottom = -24.0
 
 [node name="Television" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
-offset_left = 7625.0
+offset_left = 7335.0
+offset_top = -212.0
 offset_right = 8125.0
-offset_bottom = 250.0
+offset_bottom = 299.0
 
 [node name="Informant_Computer" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
 offset_left = -1766.0
