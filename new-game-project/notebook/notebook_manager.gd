@@ -25,8 +25,11 @@ const notebook_up_open: Texture = preload(base_file_path + "Notebook_UpOpen.png"
 @onready var stock_type_selector: StockTypeSelector = $NotebookUI/StockTypeSelector
 @onready var confirm_transaction_button: ConfirmTransactionButton = $NotebookUI/ConfirmTransactionButton;
 
+@onready var close_notebook_button: CloseNotebookButton = $NotebookUI/CloseNotebookButton;
+
 func _ready() -> void:
 	confirm_transaction_button.button.button_down.connect(confirm_transaction);
+	close_notebook_button.button.button_down.connect(close_notebook_ui);
 
 func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab ) -> void:
 	if (_is_locked):
@@ -62,3 +65,7 @@ func confirm_transaction() -> void:
 	# actually do the transaction
 	# any sfx too
 	_is_locked = false;
+
+
+func close_notebook_ui() -> void:
+	update_notebook(NotebookLocation.DESK);

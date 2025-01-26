@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtaedowfeugv"]
+[gd_scene load_steps=11 format=3 uid="uid://dtaedowfeugv"]
 
 [ext_resource type="Script" path="res://notebook/notebook_manager.gd" id="1_d6gw4"]
 [ext_resource type="Texture2D" uid="uid://cxvwtn0osr7iy" path="res://resources/images/notebook/Notebook_UpOpen.png" id="2_04glj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://notebook/stock_amount_selector.gd" id="6_yll8s"]
 [ext_resource type="Script" path="res://notebook/stock_type_selector.gd" id="7_1si64"]
 [ext_resource type="Script" path="res://notebook/confirm_transaction_button.gd" id="7_t6ml6"]
+[ext_resource type="Script" path="res://notebook/close_notebook_button.gd" id="9_t4a13"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kidd6"]
 bg_color = Color(1, 0.683333, 0, 1)
@@ -42,9 +43,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -359.0
-offset_right = 359.0
-offset_bottom = 265.0
+offset_left = -697.0
+offset_top = -15.0
+offset_right = 516.0
+offset_bottom = 250.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.180005, 0.180005, 0.180005, 1)
 theme_override_fonts/font = ExtResource("3_0n7hk")
@@ -343,5 +345,33 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_7tj8x")
 theme_override_font_sizes/font_size = 128
 text = "CALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseNotebookButton" type="Control" parent="NotebookUI"]
+anchors_preset = 0
+offset_left = 1223.0
+offset_top = -23.0
+offset_right = 1263.0
+offset_bottom = 17.0
+script = ExtResource("9_t4a13")
+
+[node name="CLOSE" type="Button" parent="NotebookUI/CloseNotebookButton"]
+custom_minimum_size = Vector2(150, 150)
+offset_right = 200.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+
+[node name="Label" type="Label" parent="NotebookUI/CloseNotebookButton/CLOSE"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "X"
 horizontal_alignment = 1
 vertical_alignment = 1
