@@ -54,6 +54,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="prompt start" type="Label" parent="NotebookUI"]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 233.0
 offset_right = 544.0
@@ -227,6 +228,7 @@ offset_bottom = -141.0
 script = ExtResource("7_1si64")
 
 [node name="stock_units" type="Label" parent="NotebookUI/StockTypeSelector"]
+layout_mode = 0
 offset_left = 246.0
 offset_top = 1194.0
 offset_right = 325.0
@@ -311,6 +313,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CALL" type="Button" parent="NotebookUI/ConfirmTransactionButton"]
+layout_mode = 0
 offset_left = 921.0
 offset_top = 1696.0
 offset_right = 1341.0
