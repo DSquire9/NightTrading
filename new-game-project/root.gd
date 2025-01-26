@@ -4,12 +4,32 @@ class_name GameManager extends Node
 @export var initial_n_stocks: int = 8;
 
 @onready var game_timer: GameTimer = $Camera2D/GameTimer;
+<<<<<<< Updated upstream
+=======
+@onready var ui_manager: UIManager = $UIManager;
+>>>>>>> Stashed changes
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
 @onready var informant_manager: InformantManager = $InformantManager;
 @onready var speech_bubble_manager: SpeechBubbleManager = $SpeechBubbleManager;
 @onready var background_manager: BackgroundManager = $BackgroundManager;
+
+enum State {
+	GAME_START,
+	GAME_RUNNING,
+	GAME_OVER,
+}
+var _state: State = State.GAME_START:
+	set(value):
+		match value:
+			State.GAME_START:
+				ui_manager.game_start();
+			State.GAME_RUNNING:
+				ui_manager.game_running();
+			State.GAME_OVER:
+				ui_manager.game_over();
+		_state = value;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -30,12 +50,24 @@ func _ready() -> void:
 	game_timer.timer_ended.connect(on_timer_ended);
 	
 	# this will eventually be done by "start game" button
-	game_timer.start();
+	#game_timer.start();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
+
+## Inputs
+func _input(event: InputEvent) -> void:
+	match _state:
+		State.GAME_START:
+			if event.is_action_pressed("start_game"):
+				start_game();
+		State.GAME_RUNNING:
+			pass
+		State.GAME_OVER:
+			if event.is_action_pressed("start_game"):
+				start_game();
 
 ## Informant Events
 func start_informant_event_timer() -> void:
@@ -118,8 +150,9 @@ func on_timer_ended():
 	end_game();
 
 
-## Game Loop Evenets
+## Game Loop Events
 func start_game() -> void:
+	_state = State.GAME_RUNNING;
 	notebook_manager.reset();
 	informant_manager.reset();
 	speech_bubble_manager.reset();
@@ -133,5 +166,6 @@ func unpaused_game() -> void:
 
 func end_game():
 	# show end screen
+	_state = State.GAME_OVER;
 	print("game over!")
 	pass

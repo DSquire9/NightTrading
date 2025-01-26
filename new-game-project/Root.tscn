@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=20 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://bd784bcihsjhm" path="res://timer/game_timer.tscn" id="2_gybaa"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_manager.gd" id="8_yfoui"]
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
+[ext_resource type="Script" path="res://ui_manager.gd" id="19_avcth"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -160,3 +161,7 @@ offset_left = 1595.0
 offset_right = 2245.0
 offset_bottom = 150.0
 grow_horizontal = 2
+start_time = 10.0
+
+[node name="UIManager" type="Node" parent="."]
+script = ExtResource("19_avcth")
