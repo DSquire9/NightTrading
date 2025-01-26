@@ -32,9 +32,10 @@ func _on_game_button_pressed():
 func _on_pause_button_pressed():
 	get_node("Pause").visible = false
 	get_node("EndScreen").visible = true
-	paused = false
+	paused = true
 
 
 func _on_pause_button_2_pressed():
 	get_node("Pause").visible = false
 	get_node("Game").visible = true
+	paused = false
