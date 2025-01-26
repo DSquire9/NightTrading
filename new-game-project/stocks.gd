@@ -22,6 +22,9 @@ const _stocks = [
 
 var _stocks_registry = {};
 
+func _ready() -> void:
+	_populate_stocks(8);
+
 ## Public Methods
 func get_stock(i: int) -> StockInstance:
 	if (n_stocks == 0 || i < 0 || i >= n_stocks):

@@ -9,7 +9,7 @@ const UPDATE_TIME = 2
 var bubbleMin = 0
 var bubbleMax = 0
 var rate = 0
-var maxRate = 50
+var maxRate = 30
 var minRate = 0
 var deltCountPriceChange = 0.0
 var deltCountRateChange = 0.0
@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	deltCountPriceChange += delta
 	if deltCountPriceChange >= UPDATE_TIME:
 		deltCountPriceChange -= UPDATE_TIME
-		update()
+		_update()
 		
 	if !popped:
 		deltCountRateChange += delta
@@ -38,7 +38,7 @@ func _process(delta: float) -> void:
 			_setRate()
 			_setRateChange()
 
-func update() -> void:
+func _update() -> void:
 	pastSeven.pop_front()
 	pastSeven.push_back(currPrice)
 	pastPrice = currPrice
@@ -70,7 +70,7 @@ func _setRateChange() -> void:
 	rateChangeIn = randi() % 31 + 10
 	
 func _setBubble():
-	bubbleMax = randi() % 1000 + 700
+	bubbleMax = (randi() % 300) + 700
 	bubbleMin = bubbleMax - (bubbleMax / 5)
 
 func _pop() -> void:
@@ -79,7 +79,7 @@ func _pop() -> void:
 	rate = abs(rate) * -3
 	stockPop.emit()
 	_setBubble()
-	print("pop!")
+	print(stock_name + " pop!")
 
 func eventTrigger(positive) -> void:
 	if positive:

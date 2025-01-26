@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=19 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" path="res://stock_instance.tscn" id="2_kdqgx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_manager.gd" id="8_yfoui"]
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
+[ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -153,3 +154,6 @@ z_index = 1000
 offset_left = 7.0
 offset_right = 7.0
 mouse_filter = 2
+
+[node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
+z_index = 1001

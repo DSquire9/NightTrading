@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci8hds44qggsy"]
+
+[ext_resource type="Script" path="res://price_label.gd" id="1_wwhw6"]
+
+[sub_resource type="Theme" id="Theme_bwhsn"]
+default_font_size = 35
+
+[node name="PriceLabel" type="RichTextLabel"]
+z_index = 1002
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_bwhsn")
+text = "Sample Text"
+script = ExtResource("1_wwhw6")

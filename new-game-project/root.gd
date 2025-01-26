@@ -1,7 +1,7 @@
 class_name GameManager extends Node
 
 @export var timeBetweenInformantEventsInSeconds: float = 2.0;
-@export var initial_n_stocks: int = 8;
+#@export var initial_n_stocks: int = 8;
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
@@ -17,7 +17,7 @@ var isInformantEventsOn = false:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	stocks.n_stocks = initial_n_stocks;
+	#stocks.n_stocks = initial_n_stocks;
 	isInformantEventsOn = true;
 	notebook_manager.notebook_updated.connect(on_notebook_updated);
 	informant_manager.informant_updated.connect(on_informant_updated);
