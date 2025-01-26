@@ -23,3 +23,6 @@ func update_informant( a_location: InformantLocation = location, a_message: Stri
 	location = a_location;
 	message = a_message;
 	informant_updated.emit(location, message);
+
+func reset() -> void:
+	location = InformantLocation.NONE;
