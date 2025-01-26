@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=24 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
+[ext_resource type="PackedScene" uid="uid://bxck8liyqjk3x" path="res://player_portfolio.tscn" id="2_ca11l"]
 [ext_resource type="PackedScene" uid="uid://bd784bcihsjhm" path="res://timer/game_timer.tscn" id="2_gybaa"]
 [ext_resource type="PackedScene" path="res://stock_instance.tscn" id="2_kdqgx"]
 [ext_resource type="PackedScene" uid="uid://cfot00bpjagtg" path="res://audio/audio_manager.tscn" id="2_klobn"]
@@ -21,9 +22,12 @@
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 [ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
 [ext_resource type="PackedScene" uid="uid://ghadtt162jll" path="res://ui/ui_manager.tscn" id="19_x248j"]
+[ext_resource type="PackedScene" uid="uid://dlvqvjl1n6221" path="res://computer_display.tscn" id="22_pych2"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
+
+[node name="PlayerPortfolio" parent="." instance=ExtResource("2_ca11l")]
 
 [node name="BackgroundManager" type="Node" parent="."]
 script = ExtResource("3_3fqm6")
@@ -190,6 +194,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="ComputerDisplay" parent="." instance=ExtResource("22_pych2")]
+offset_left = 877.0
+offset_top = 604.0
+offset_right = -2092.0
+offset_bottom = -808.0
+rotation = -0.0999124
 
 [connection signal="pressed" from="Camera2D/Button2" to="Camera2D" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/Button3" to="Camera2D" method="_on_button_3_pressed"]
