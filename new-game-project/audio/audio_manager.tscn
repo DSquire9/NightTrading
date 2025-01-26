@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfot00bpjagtg"]
+
+[ext_resource type="Script" path="res://audio/audio_manager.gd" id="1_ik4f2"]
+[ext_resource type="AudioStream" uid="uid://c8ihhljipr7w2" path="res://resources/music/Profit Maxing_Music FINAL.wav" id="2_46yte"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_ik4f2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_46yte")

@@ -1,9 +1,9 @@
 class_name BackgroundManager extends Node
 
-const base_file_path = "res://resources/images/backgrounds/";
-
 @onready var computer_view: TextureRect = $ComputerView/TextureRect;
 @onready var television_view: TextureRect = $TelevisionView/TextureRect;
+
+const base_file_path = "res://resources/images/backgrounds/";
 
 const screen_computer__informant_computer__notebook_desk = preload(base_file_path + "Screen_Computer__Informant_Computer__Notebook_Desk.png");
 const screen_computer__informant_computer__notebook_none = preload(base_file_path + "Screen_Computer__Informant_Computer__Notebook_None.png");

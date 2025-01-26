@@ -66,8 +66,8 @@ func unpause() -> void:
 func _get_time_as_string() -> String:
 	var current_time: float = _time_on_timer;
 	# minutes
-	var n_min: int = int(_s_to_min(current_time));
-	current_time -= _min_to_s(float(n_min));
+	var n_min: int = int(_sec_to_min(current_time));
+	current_time -= _min_to_sec(float(n_min));
 	# seconds
 	var n_sec: int = int(current_time);
 	current_time -= float(n_sec);
@@ -98,8 +98,8 @@ func _get_time_as_string() -> String:
 	
 	return out;
 
-func _min_to_s(min: float) -> float:
-	return min * 60.0;
+func _min_to_sec(t_min: float) -> float:
+	return t_min * 60.0;
 
-func _s_to_min(s: float) -> float:
-	return s / 60.0;
+func _sec_to_min(t_sec: float) -> float:
+	return t_sec / 60.0;

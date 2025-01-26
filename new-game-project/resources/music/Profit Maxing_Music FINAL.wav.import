@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8ihhljipr7w2"
+path="res://.godot/imported/Profit Maxing_Music FINAL.wav-38d40cbe3153a697bd7a69eed25e22e6.sample"
+
+[deps]
+
+source_file="res://resources/music/Profit Maxing_Music FINAL.wav"
+dest_files=["res://.godot/imported/Profit Maxing_Music FINAL.wav-38d40cbe3153a697bd7a69eed25e22e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
