@@ -3,7 +3,7 @@ class_name GameManager extends Node
 @export var timeBetweenInformantEventsInSeconds: float = 2.0;
 @export var initial_n_stocks: int = 8;
 
-@onready var game_timer: GameTimer = $GameTimer;
+@onready var game_timer: GameTimer = $Camera2D/GameTimer;
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;

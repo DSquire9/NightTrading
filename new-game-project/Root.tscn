@@ -22,10 +22,6 @@
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("13_okbna")
-
 [node name="BackgroundManager" type="Node" parent="."]
 script = ExtResource("3_3fqm6")
 
@@ -150,14 +146,17 @@ offset_bottom = 833.0
 icon = ExtResource("7_5y2fr")
 
 [node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
-visible = false
 z_index = 1000
 
-[node name="GameTimer" parent="." instance=ExtResource("2_gybaa")]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("13_okbna")
+
+[node name="GameTimer" parent="Camera2D" instance=ExtResource("2_gybaa")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 100.0
+offset_left = 1595.0
+offset_right = 2245.0
+offset_bottom = 150.0
 grow_horizontal = 2
