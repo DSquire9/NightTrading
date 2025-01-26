@@ -1,12 +1,13 @@
 class_name GameManager extends Node
 
-@export var timeBetweenInformantEventsInSeconds = 1.0;
-@export var initial_n_stocks = 8.0;
+@export var timeBetweenInformantEventsInSeconds: float = 1.0;
+@export var initial_n_stocks: int = 8;
 
-@onready var stocks = $Stocks;
-@onready var notebook_manager = $NotebookManager;
-@onready var informant_manager = $InformantManager;
-@onready var background_manager = $BackgroundManager;
+@onready var stocks: Stocks = $Stocks;
+@onready var notebook_manager: NotebookManager = $NotebookManager;
+@onready var informant_manager: InformantManager = $InformantManager;
+@onready var speech_bubble_manager: SpeechBubbleManager = $SpeechBubbleManager;
+@onready var background_manager: BackgroundManager = $BackgroundManager;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -38,6 +39,9 @@ func trigger_informant_event() -> void:
 	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.DESK);
 	#informant_manager.update_informant(InformantManager.InformantLocation.WINDOW);
 	#redraw_backgrounds();
+	
+	## for testing the speech bubbles
+	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT", 1.5));
 	
 	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
