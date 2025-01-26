@@ -128,6 +128,14 @@ script = ExtResource("2_lumtb")
 
 [node name="Manufacturing" parent="Stocks" instance=ExtResource("2_kdqgx")]
 
+[node name="TV_Timer" type="Timer" parent="Stocks"]
+wait_time = 5.0
+autostart = true
+
+[node name="Radio_Timer" type="Timer" parent="Stocks"]
+wait_time = 5.0
+autostart = true
+
 [node name="TV" parent="." instance=ExtResource("3_1l420")]
 offset_left = 10450.0
 offset_top = 1126.0
@@ -177,5 +185,7 @@ offset_right = -1960.0
 offset_bottom = -827.0
 rotation = -0.0752188
 
+[connection signal="timeout" from="Stocks/TV_Timer" to="Stocks" method="_on_tv_timer_timeout"]
+[connection signal="timeout" from="Stocks/Radio_Timer" to="Stocks" method="_on_radio_timer_timeout"]
 [connection signal="button_up" from="TV" to="Stocks" method="_on_tv_button_up"]
 [connection signal="button_up" from="Radio" to="Stocks" method="_on_radio_button_up"]

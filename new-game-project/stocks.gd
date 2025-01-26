@@ -74,10 +74,9 @@ func TV_event():
 	var data = SpeechBubbleData.new(s, 2.0)
 	get_parent().speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, data)
 
-
-func _on_radio_button_up() -> void:
-	radio_event()
-
-
-func _on_tv_button_up() -> void:
+func _on_tv_timer_timeout() -> void:
 	TV_event()
+
+
+func _on_radio_timer_timeout() -> void:
+	radio_event()
