@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhktbxucukefj"
-path="res://.godot/imported/Screen_Computer__Informant_Computer__Notebook_Desk.png-d6664691fa1de1d48bce0317d393640e.ctex"
+uid="uid://cpabv4d3ncwhy"
+path="res://.godot/imported/Screen_Computer__Informant_None__Notebook_Desk.png-6334f5bdb2e56e3795edb012c977daa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_Computer__Informant_Computer__Notebook_Desk.png"
-dest_files=["res://.godot/imported/Screen_Computer__Informant_Computer__Notebook_Desk.png-d6664691fa1de1d48bce0317d393640e.ctex"]
+source_file="res://resources/images/backgrounds/Screen_Computer__Informant_None__Notebook_Desk.png"
+dest_files=["res://.godot/imported/Screen_Computer__Informant_None__Notebook_Desk.png-6334f5bdb2e56e3795edb012c977daa2.ctex"]
 
 [params]
 

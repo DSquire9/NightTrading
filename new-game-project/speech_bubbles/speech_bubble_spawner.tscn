@@ -1,6 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnfqg1grhhvde"]
+[gd_scene load_steps=3 format=3 uid="uid://bnfqg1grhhvde"]
 
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_spawner.gd" id="1_33ytv"]
+[ext_resource type="Texture2D" uid="uid://cjbofurhgq8ki" path="res://resources/images/speech_bubbles/PlaceholderBubble.png" id="2_1qqqu"]
 
-[node name="SpeechBubbleSpawner" type="Node2D"]
+[node name="SpeechBubbleSpawner" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_33ytv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_1qqqu")
+region_rect = Rect2(0, 0, 96, 96)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Label" type="Label" parent="PanelContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "This is a test!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

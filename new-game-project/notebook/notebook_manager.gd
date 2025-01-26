@@ -1,6 +1,6 @@
 class_name NotebookManager extends Node
 
-const base_file_path = "res://resources/images/";
+const base_file_path = "res://resources/images/notebook/";
 
 signal notebook_updated(location, tab);
 

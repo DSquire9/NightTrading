@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://binx5xbwm2io5"
-path="res://.godot/imported/Notebook_UpClosed.png-ce7973991979a29241d8ff88213f28c7.ctex"
+uid="uid://ddw0amus2tu7y"
+path="res://.godot/imported/Screen_Computer__Informant_Window__Notebook_None.png-20c0a06342c8d32f152d11414d5bf650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Notebook_UpClosed.png"
-dest_files=["res://.godot/imported/Notebook_UpClosed.png-ce7973991979a29241d8ff88213f28c7.ctex"]
+source_file="res://resources/images/backgrounds/Screen_Computer__Informant_Window__Notebook_None.png"
+dest_files=["res://.godot/imported/Screen_Computer__Informant_Window__Notebook_None.png-20c0a06342c8d32f152d11414d5bf650.ctex"]
 
 [params]
 

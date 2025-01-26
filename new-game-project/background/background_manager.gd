@@ -1,6 +1,6 @@
 class_name BackgroundManager extends Node
 
-const base_file_path = "res://resources/images/";
+const base_file_path = "res://resources/images/backgrounds/";
 
 @onready var computer_view: TextureRect = $ComputerView/TextureRect;
 @onready var television_view: TextureRect = $TelevisionView/TextureRect;

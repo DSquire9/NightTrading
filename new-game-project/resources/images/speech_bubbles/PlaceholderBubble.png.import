@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dreh5ktpvc7ut"
-path="res://.godot/imported/Screen_Television__Informant_None.png-afc5ec279e8ca411061493c058112dba.ctex"
+uid="uid://cjbofurhgq8ki"
+path="res://.godot/imported/PlaceholderBubble.png-8e3db24707f80c5cd4d4b777412c2c65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_Television__Informant_None.png"
-dest_files=["res://.godot/imported/Screen_Television__Informant_None.png-afc5ec279e8ca411061493c058112dba.ctex"]
+source_file="res://resources/images/speech_bubbles/PlaceholderBubble.png"
+dest_files=["res://.godot/imported/PlaceholderBubble.png-8e3db24707f80c5cd4d4b777412c2c65.ctex"]
 
 [params]
 
