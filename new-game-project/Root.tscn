@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_manager.gd" id="8_yfoui"]
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
-[ext_resource type="Script" path="res://ui_manager.gd" id="19_avcth"]
+[ext_resource type="PackedScene" uid="uid://ghadtt162jll" path="res://ui/ui_manager.tscn" id="19_x248j"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -147,6 +147,7 @@ offset_bottom = 833.0
 icon = ExtResource("7_5y2fr")
 
 [node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
+visible = false
 z_index = 1000
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -163,5 +164,4 @@ offset_bottom = 150.0
 grow_horizontal = 2
 start_time = 10.0
 
-[node name="UIManager" type="Node" parent="."]
-script = ExtResource("19_avcth")
+[node name="UIManager" parent="." instance=ExtResource("19_x248j")]

@@ -4,10 +4,7 @@ class_name GameManager extends Node
 @export var initial_n_stocks: int = 8;
 
 @onready var game_timer: GameTimer = $Camera2D/GameTimer;
-<<<<<<< Updated upstream
-=======
 @onready var ui_manager: UIManager = $UIManager;
->>>>>>> Stashed changes
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
@@ -22,13 +19,7 @@ enum State {
 }
 var _state: State = State.GAME_START:
 	set(value):
-		match value:
-			State.GAME_START:
-				ui_manager.game_start();
-			State.GAME_RUNNING:
-				ui_manager.game_running();
-			State.GAME_OVER:
-				ui_manager.game_over();
+		ui_manager.update_ui(value);
 		_state = value;
 
 var isInformantEventsOn = false:
