@@ -248,13 +248,13 @@ offset_top = 1152.0
 offset_right = 600.0
 offset_bottom = 1302.0
 
-[node name="LEFT" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
+[node name="PREV" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7tj8x")
 theme_override_font_sizes/font_size = 96
 
-[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/LEFT"]
+[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/PREV"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -270,14 +270,15 @@ vertical_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
 custom_minimum_size = Vector2(420, 420)
 layout_mode = 2
+expand_mode = 3
 
-[node name="RIGHT" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
+[node name="NEXT" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
 custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_7tj8x")
 theme_override_font_sizes/font_size = 96
 
-[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/RIGHT"]
+[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/NEXT"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

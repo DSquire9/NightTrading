@@ -13,7 +13,7 @@ enum NotebookLocation {
 }
 
 var location: NotebookLocation = NotebookLocation.DESK;
-var tab: int = -1;
+var tab: int = 0;
 var _is_locked: bool = false;
 
 const notebook_up_closed: Texture = preload(base_file_path + "Notebook_UpClosed.png");
@@ -22,6 +22,7 @@ const notebook_up_open: Texture = preload(base_file_path + "Notebook_UpOpen.png"
 @onready var notebook: TextureRect = $TextureRect;
 @onready var notebook_ui: Control = $NotebookUI;
 @onready var buy_sell_toggle: BuySellToggle = $NotebookUI/BuySellToggle;
+@onready var stock_amount_selector: StockAmountSelector = $NotebookUI/StockAmountSelector;
 @onready var stock_type_selector: StockTypeSelector = $NotebookUI/StockTypeSelector
 @onready var confirm_transaction_button: ConfirmTransactionButton = $NotebookUI/ConfirmTransactionButton;
 
@@ -49,19 +50,22 @@ func update_notebook( a_location: NotebookLocation = location, a_tab: int = tab 
 			notebook.texture = null;
 
 func reset() -> void:
-	update_notebook(NotebookLocation.DESK, -1);
+	update_notebook(NotebookLocation.DESK, 0);
 	_is_locked = false;
 
 
 func confirm_transaction() -> void:
 	# do start of transaction things (e.g., sfx)
 	_is_locked = true;
-	#await get_tree().create_timer(notebook_cooldown).timeout;
+	await get_tree().create_timer(notebook_cooldown).timeout;
 	var is_buy: bool = (buy_sell_toggle.mode == BuySellToggle.Mode.BUY);
-	if is_buy:
-		print("BUYING SO MUCH STOCK");
-	else:
-		print("SELLING SO MUCH STOCK");
+	var amount: int = stock_amount_selector.get_amount();
+	if !is_buy:
+		amount *= -1;
+	var index: int = tab;
+	
+	# this is what contains the buy/sell info!
+	var transaction_data: TransactionData = TransactionData.new(index, amount);
 	# actually do the transaction
 	# any sfx too
 	_is_locked = false;
