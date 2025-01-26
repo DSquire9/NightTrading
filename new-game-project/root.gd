@@ -5,6 +5,7 @@ class_name GameManager extends Node
 
 @onready var game_timer: GameTimer = $Camera2D/GameTimer;
 @onready var ui_manager: UIManager = $UIManager;
+@onready var audio_manager: AudioManager = $AudioManager;
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
@@ -35,9 +36,6 @@ func _ready() -> void:
 	notebook_manager.notebook_updated.connect(on_notebook_updated);
 	informant_manager.informant_updated.connect(on_informant_updated);
 	
-	game_timer.timer_started.connect(on_timer_started);
-	game_timer.timer_paused.connect(on_timer_paused);
-	game_timer.timer_last_minute.connect(on_timer_last_minute);
 	game_timer.timer_ended.connect(on_timer_ended);
 	
 	# this will eventually be done by "start game" button
@@ -121,22 +119,6 @@ func redraw_backgrounds():
 
 
 ## Timer Effects
-func on_timer_started():
-	#print("START");
-	# let's go!!!
-	# audio general minutes
-	pass
-
-func on_timer_paused():
-	#print("PAUSE");
-	# music stops
-	pass
-
-func on_timer_last_minute():
-	#print("LAST MIN");
-	# audio last minute
-	pass
-
 func on_timer_ended():
 	end_game();
 
@@ -147,16 +129,13 @@ func start_game() -> void:
 	notebook_manager.reset();
 	informant_manager.reset();
 	speech_bubble_manager.reset();
+	audio_manager.play_profit_maxing(game_timer.start_time);
 	game_timer.start();
 
-func pause_game() -> void:
-	game_timer.pause();
-
-func unpaused_game() -> void:
-	game_timer.unpause();
-
-func end_game():
-	# show end screen
+func end_game(is_end_early: bool = false):
+	if is_end_early:
+		audio_manager.play_nothing()
+	#audio_manager.play_profit_maxing();
 	_state = State.GAME_OVER;
 	print("game over!")
 	pass

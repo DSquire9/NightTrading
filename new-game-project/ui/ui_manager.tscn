@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ghadtt162jll"]
 
-[ext_resource type="Script" path="res://ui_manager.gd" id="1_hhrsg"]
+[ext_resource type="Script" path="res://ui/ui_manager.gd" id="1_hhrsg"]
 [ext_resource type="Texture2D" uid="uid://ctkjqa7epy1bc" path="res://resources/images/speech_bubbles/Bubble_DarkGrey.png" id="2_g8f5x"]
 [ext_resource type="FontFile" uid="uid://cki7efy2kwdd" path="res://fonts/W95FA/W95FA/W95FA.otf" id="3_y50jt"]
 

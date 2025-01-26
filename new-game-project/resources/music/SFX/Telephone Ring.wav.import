@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxp2bw8u6e4nm"
+path="res://.godot/imported/Telephone Ring.wav-5052ac189cf04b1580e0137bc20d1132.sample"
+
+[deps]
+
+source_file="res://resources/music/SFX/Telephone Ring.wav"
+dest_files=["res://.godot/imported/Telephone Ring.wav-5052ac189cf04b1580e0137bc20d1132.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
