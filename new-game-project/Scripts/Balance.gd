@@ -1,7 +1,7 @@
 class_name Balance extends Node
 
 @export var buying_power: float = 1000.0  # Initial buying power
-var last_transaction = {"Name": "Hospitality","Type": "Buy", "Amount": 0, "Price": 0.0} 
+var last_transaction = {"Name": "","Type": "", "Amount": 0, "Price": 0.0} 
 var invested_money: float = 0.0
 
 var owned_stocks = {}

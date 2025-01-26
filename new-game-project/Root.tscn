@@ -176,3 +176,6 @@ offset_top = 587.0
 offset_right = -1960.0
 offset_bottom = -827.0
 rotation = -0.0752188
+
+[connection signal="button_up" from="TV" to="Stocks" method="_on_tv_button_up"]
+[connection signal="button_up" from="Radio" to="Stocks" method="_on_radio_button_up"]
