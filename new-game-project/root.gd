@@ -82,7 +82,6 @@ func trigger_informant_event() -> void:
 			$Stocks.informant_event(stock.stock_name + " Will Go Up...")
 		else:
 			$Stocks.informant_event(stock.stock_name + " Will Go Down...")
-		#$Informant.trigger(stock.stock_name, positive)
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
