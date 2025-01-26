@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlvqvjl1n6221"]
+
+[ext_resource type="Script" path="res://computer_display.gd" id="1_75fsc"]
+[ext_resource type="FontFile" uid="uid://cki7efy2kwdd" path="res://fonts/W95FA/W95FA/W95FA.otf" id="2_ackjx"]
+
+[sub_resource type="Theme" id="Theme_23ffc"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_ylcfn"]
+default_font = ExtResource("2_ackjx")
+default_font_size = 75
+
+[node name="ComputerDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2340.0
+offset_bottom = -1160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_23ffc")
+script = ExtResource("1_75fsc")
+
+[node name="CurrentWealth" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 33.0
+offset_right = 1843.0
+offset_bottom = 205.0
+theme = SubResource("Theme_ylcfn")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Current Wealth: $XXXXX"
+vertical_alignment = 1
+
+[node name="LastTransaction" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 215.0
+offset_right = 1849.0
+offset_bottom = 387.0
+theme = SubResource("Theme_ylcfn")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Last Transaction: XXXXXX"
+vertical_alignment = 1

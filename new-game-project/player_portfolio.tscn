@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxck8liyqjk3x"]
+
+[ext_resource type="Script" path="res://Scripts/Balance.gd" id="1_hesl7"]
+
+[node name="PlayerPortfolio" type="Node"]
+script = ExtResource("1_hesl7")

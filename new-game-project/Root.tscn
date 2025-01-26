@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=22 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://bd784bcihsjhm" path="res://timer/game_timer.tscn" id="2_gybaa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxftc47nig0qy" path="res://television.tscn" id="3_1l420"]
 [ext_resource type="Script" path="res://background/background_manager.gd" id="3_3fqm6"]
 [ext_resource type="Texture2D" uid="uid://dreh5ktpvc7ut" path="res://resources/images/backgrounds/Screen_Television__Informant_None.png" id="3_ddl0e"]
+[ext_resource type="PackedScene" uid="uid://bxck8liyqjk3x" path="res://player_portfolio.tscn" id="3_x78sc"]
 [ext_resource type="PackedScene" uid="uid://dkxorndbow4gi" path="res://radio.tscn" id="4_7c415"]
 [ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
 [ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 [ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
+[ext_resource type="PackedScene" uid="uid://dlvqvjl1n6221" path="res://computer_display.tscn" id="20_2rdml"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
@@ -26,6 +28,8 @@ script = ExtResource("1_neleb")
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 script = ExtResource("13_okbna")
+
+[node name="PlayerPortfolio" parent="." instance=ExtResource("3_x78sc")]
 
 [node name="BackgroundManager" type="Node" parent="."]
 script = ExtResource("3_3fqm6")
@@ -164,3 +168,11 @@ offset_bottom = 100.0
 grow_horizontal = 2
 
 [node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
+visible = false
+
+[node name="ComputerDisplay" parent="." instance=ExtResource("20_2rdml")]
+offset_left = 887.0
+offset_top = 587.0
+offset_right = -1960.0
+offset_bottom = -827.0
+rotation = -0.0752188
