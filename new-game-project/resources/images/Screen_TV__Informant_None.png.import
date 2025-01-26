@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cubil8mif8w14"
-path="res://.godot/imported/Screen_Computer__Intruder_Outside__Planner_Desk.png-3815ced71d7ba617f425fc9dd815be79.ctex"
+uid="uid://dreh5ktpvc7ut"
+path="res://.godot/imported/Screen_TV__Informant_None.png-acc3e369fbad3c0265da262cf0804254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_Computer__Intruder_Outside__Planner_Desk.png"
-dest_files=["res://.godot/imported/Screen_Computer__Intruder_Outside__Planner_Desk.png-3815ced71d7ba617f425fc9dd815be79.ctex"]
+source_file="res://resources/images/Screen_TV__Informant_None.png"
+dest_files=["res://.godot/imported/Screen_TV__Informant_None.png-acc3e369fbad3c0265da262cf0804254.ctex"]
 
 [params]
 

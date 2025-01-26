@@ -1,15 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://br4y18terbox8"]
+[gd_scene load_steps=16 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock_instance.tscn" id="2_kdqgx"]
 [ext_resource type="Script" path="res://stocks.gd" id="2_lumtb"]
-[ext_resource type="Texture2D" uid="uid://cpabv4d3ncwhy" path="res://resources/images/Screen_Computer__Intruder_None__Planner_Desk.png" id="2_px1m4"]
+[ext_resource type="Texture2D" uid="uid://cpabv4d3ncwhy" path="res://resources/images/Screen_Computer__Informant_None__Notebook_Desk.png" id="2_px1m4"]
 [ext_resource type="Script" path="res://informant/informant_manager.gd" id="2_t0yj5"]
 [ext_resource type="PackedScene" uid="uid://cxftc47nig0qy" path="res://television.tscn" id="3_1l420"]
-[ext_resource type="Texture2D" uid="uid://dreh5ktpvc7ut" path="res://resources/images/Screen_TV__Intruder_None.png" id="3_ddl0e"]
+[ext_resource type="Script" path="res://background_manager.gd" id="3_3fqm6"]
+[ext_resource type="Texture2D" uid="uid://dreh5ktpvc7ut" path="res://resources/images/Screen_TV__Informant_None.png" id="3_ddl0e"]
 [ext_resource type="PackedScene" uid="uid://dkxorndbow4gi" path="res://radio.tscn" id="4_7c415"]
 [ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
 [ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
+[ext_resource type="Script" path="res://notebook/notebook_manager.gd" id="6_mrv1e"]
 [ext_resource type="PackedScene" uid="uid://bjr4rcfjctq5c" path="res://informant.tscn" id="6_y8eel"]
 [ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="7_5y2fr"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
@@ -21,11 +23,12 @@ script = ExtResource("1_neleb")
 anchor_mode = 0
 script = ExtResource("13_okbna")
 
-[node name="Background" type="Node" parent="."]
+[node name="BackgroundManager" type="Node" parent="."]
+script = ExtResource("3_3fqm6")
 
-[node name="TheDarknessBehindItAll" type="Node" parent="Background"]
+[node name="TheDarknessBehindItAll" type="Node" parent="BackgroundManager"]
 
-[node name="ColorRect" type="ColorRect" parent="Background/TheDarknessBehindItAll"]
+[node name="ColorRect" type="ColorRect" parent="BackgroundManager/TheDarknessBehindItAll"]
 z_index = -4096
 offset_left = -308.0
 offset_top = -223.0
@@ -33,20 +36,23 @@ offset_right = 11813.0
 offset_bottom = 2439.0
 color = Color(0, 0, 0, 1)
 
-[node name="ComputerView" type="Node" parent="Background"]
+[node name="ComputerView" type="Node" parent="BackgroundManager"]
 
-[node name="TextureRect" type="TextureRect" parent="Background/ComputerView"]
+[node name="TextureRect" type="TextureRect" parent="BackgroundManager/ComputerView"]
 offset_right = 3840.0
 offset_bottom = 2160.0
 texture = ExtResource("2_px1m4")
 
-[node name="TelevisionView" type="Node" parent="Background"]
+[node name="TelevisionView" type="Node" parent="BackgroundManager"]
 
-[node name="TextureRect" type="TextureRect" parent="Background/TelevisionView"]
+[node name="TextureRect" type="TextureRect" parent="BackgroundManager/TelevisionView"]
 offset_left = 7680.0
 offset_right = 11520.0
 offset_bottom = 2160.0
 texture = ExtResource("3_ddl0e")
+
+[node name="NotebookManager" type="Node" parent="."]
+script = ExtResource("6_mrv1e")
 
 [node name="InformantManager" type="Node" parent="."]
 script = ExtResource("2_t0yj5")

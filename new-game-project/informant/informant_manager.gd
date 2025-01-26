@@ -9,14 +9,8 @@ enum InformantLocation {
 	NONE, # must be last for randomizer to work
 }
 
-var current_location: InformantLocation = InformantLocation.NONE:
-	set(value):
-		current_location = value;
-
-var current_message: String = "":
-	set(value):
-		current_message = value;
-		
+var current_location: InformantLocation = InformantLocation.NONE;
+var current_message: String = "";
 
 func randomize_location( must_appear: bool ) -> InformantLocation: 
 	var max_location_index: int = InformantLocation.size();

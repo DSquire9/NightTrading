@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dreh5ktpvc7ut"
-path="res://.godot/imported/Screen_TV__Intruder_None.png-3dcb125100738e085f03750da91b9285.ctex"
+uid="uid://c33kg8wsc651b"
+path="res://.godot/imported/Screen_Computer__Informant_Computer__Notebook_None.png-921746020d9074c845c82989c88183e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/Screen_TV__Intruder_None.png"
-dest_files=["res://.godot/imported/Screen_TV__Intruder_None.png-3dcb125100738e085f03750da91b9285.ctex"]
+source_file="res://resources/images/Screen_Computer__Informant_Computer__Notebook_None.png"
+dest_files=["res://.godot/imported/Screen_Computer__Informant_Computer__Notebook_None.png-921746020d9074c845c82989c88183e9.ctex"]
 
 [params]
 

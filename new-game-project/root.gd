@@ -1,10 +1,12 @@
-extends Node
+class_name GameManager extends Node
 
 @export var timeBetweenInformantEventsInSeconds = 1.0;
 @export var initial_n_stocks = 8.0;
 
 @onready var stocks = $Stocks;
+@onready var notebook_manager = $NotebookManager;
 @onready var informant_manager = $InformantManager;
+@onready var background_manager = $BackgroundManager;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -62,5 +64,7 @@ func on_informant_updated( _location: InformantManager.InformantLocation, _messa
 	redraw_backgrounds();
 
 func redraw_backgrounds():
+	var notebook_location: NotebookManager.NotebookLocation = notebook_manager.notebook_location;
 	var informant_location: InformantManager.InformantLocation = informant_manager.informant_location;
-	# do something with informant_location
+	var background_data: BackgroundData = BackgroundData.new(notebook_location, informant_location);
+	background_manager.update_background(background_data);
