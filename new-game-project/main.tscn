@@ -24,7 +24,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-text = "Main Menu"
 
 [node name="Play" type="Button" parent="MainTitle"]
 z_index = -1
@@ -34,12 +33,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -20.0
-offset_right = 51.5
-offset_bottom = 20.0
+offset_left = -239.0
+offset_top = -14.9999
+offset_right = -136.0
+offset_bottom = 25.0001
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.94059, 5.94059)
 text = "Play"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 
@@ -53,7 +53,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-text = "Game Over"
 
 [node name="MainMenu" type="Button" parent="EndScreen"]
 z_index = -1
@@ -63,12 +62,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -20.0
-offset_right = 51.5
-offset_bottom = 20.0
+offset_left = -266.0
+offset_top = -30.0
+offset_right = -163.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(6.19618, 6.19618)
 text = "Main Menu"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 
@@ -82,7 +82,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-text = "Game"
 
 [node name="Pause" type="Button" parent="Game"]
 z_index = -1
@@ -90,11 +89,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -51.5
-offset_right = 51.5
-offset_bottom = 40.0
+offset_left = 1593.0
+offset_top = 36.0
+offset_right = 1696.0
+offset_bottom = 76.0
 grow_horizontal = 2
-text = "Pause"
+scale = Vector2(2.3997, 3.5597)
+text = "||"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 
 [node name="Pause" type="RichTextLabel" parent="."]
@@ -107,7 +108,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-text = "Pause"
 
 [node name="Quit" type="Button" parent="Pause"]
 z_index = -1
@@ -123,6 +123,7 @@ offset_right = 51.5
 offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.24767, 5.24767)
 text = "Quit"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 
@@ -134,12 +135,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -51.5
-offset_top = -20.0
-offset_right = 51.5
-offset_bottom = 20.0
+offset_left = -51.0001
+offset_top = -208.0
+offset_right = 51.9999
+offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5.30602, 5.30602)
 text = "Resume"
 icon = SubResource("PlaceholderTexture2D_6cvry")
 

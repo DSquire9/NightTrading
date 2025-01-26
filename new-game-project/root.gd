@@ -1,6 +1,6 @@
 class_name GameManager extends Node
 
-@export var timeBetweenInformantEventsInSeconds: float = 3.0;
+@export var timeBetweenInformantEventsInSeconds: float = 2.0;
 @export var initial_n_stocks: int = 8;
 
 @onready var stocks: Stocks = $Stocks;
@@ -36,7 +36,7 @@ func start_informant_event_timer() -> void:
 
 func trigger_informant_event() -> void:
 	## for testing the background / notebook updater
-	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.DESK);
+	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
 	#informant_manager.update_informant(InformantManager.InformantLocation.WINDOW);
 	#redraw_backgrounds();
 	
@@ -56,11 +56,11 @@ func trigger_informant_event() -> void:
 		stocks.get_stock(eventType).eventTrigger(positive)
 	
 	## for testing the speech bubbles
-	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT", 15.0));
-	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
-	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
-	#await get_tree().create_timer(1.5).timeout
-	#speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
+	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_COMPUTER, SpeechBubbleData.new("TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT TESTTTT", 15.0));
+	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.INFORMANT_WINDOW, SpeechBubbleData.new("TESTTTT22222", 15.0));
+	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, SpeechBubbleData.new("TESTTTT2", 10000.0));
+	await get_tree().create_timer(1.5).timeout
+	speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.RADIO, SpeechBubbleData.new("TESTTTT3", 10000.0));
 
 func getTVTrend(channel) -> bool:
 	var stock = stocks.get_stock(channel)
