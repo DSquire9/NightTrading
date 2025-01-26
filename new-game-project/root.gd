@@ -37,7 +37,7 @@ func start_informant_event_timer() -> void:
 func trigger_informant_event() -> void:
 	## for testing the background / notebook updater
 	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
-	#informant_manager.update_informant(InformantManager.InformantLocation.WINDOW);
+	#informant_manager.update_informant(InformantManager.InformantLocation.COMPUTER);
 	#redraw_backgrounds();
 	
 	var n_stocks = stocks.n_stocks;

@@ -5,8 +5,9 @@ signal stockPop
 @export var pastPrice = 1
 @export var rateChangeIn = 0
 @export var pastSeven = [0,0,0,0,0,0,0]
-var bubbleMin = 500
-var bubbleMax = 750
+const UPDATE_TIME = 2
+var bubbleMin = 0
+var bubbleMax = 0
 var rate = 0
 var maxRate = 50
 var minRate = 0
@@ -19,22 +20,23 @@ var stock_name = "";
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	setRate()
-	setRateChange()
+	_setRate()
+	_setRateChange()
+	_setBubble()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	deltCountPriceChange += delta
-	if deltCountPriceChange >= 1:
-		deltCountPriceChange -= 1
+	if deltCountPriceChange >= UPDATE_TIME:
+		deltCountPriceChange -= UPDATE_TIME
 		update()
 		
 	if !popped:
 		deltCountRateChange += delta
 		if deltCountRateChange >= rateChangeIn:
 			deltCountRateChange -= rateChangeIn
-			setRate()
-			setRateChange()
+			_setRate()
+			_setRateChange()
 
 func update() -> void:
 	pastSeven.pop_front()
@@ -49,35 +51,37 @@ func update() -> void:
 	if popped:
 		if currPrice <= popGoal:
 			popped = false
-			setRate()
-			setRateChange()
+			_setRate()
+			_setRateChange()
 			
 	# pop if we hit the chance
 	if currPrice >= bubbleMax or randf() <= float(currPrice - bubbleMin) / float(bubbleMax - bubbleMin):
-		pop() 
-	#print(pastSeven)
+		_pop() 
+	print(pastSeven)
 	
-func setRate() -> void:
+func _setRate() -> void:
 	var wasNeg = true if rate < 0 else true
 	rate = randi() % (maxRate + 1) + minRate
 	if !wasNeg and randi() % 2 == 0:
 		rate *= -1
 
 
-func setRateChange() -> void:
+func _setRateChange() -> void:
 	rateChangeIn = randi() % 31 + 10
 	
-func setBubble():
-	pass
+func _setBubble():
+	bubbleMax = randi() % 1000 + 700
+	bubbleMin = bubbleMax - (bubbleMax / 5)
 
-func pop():
+func _pop() -> void:
 	popped = true
 	popGoal = currPrice / 10
 	rate = abs(rate) * -3
 	stockPop.emit()
+	_setBubble()
 	print("pop!")
 
-func eventTrigger(positive):
+func eventTrigger(positive) -> void:
 	if positive:
 		rate = abs(rate) * 2
 	else:
