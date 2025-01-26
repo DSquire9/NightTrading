@@ -1,10 +1,12 @@
 class_name Stocks extends Node
 var stock_instance = preload("res://stock_instance.tscn");
 
+@onready var active_stocks: Node = $ActiveStocks;
+
 ## Public Variables
 var n_stocks: int :
 	get:
-		return get_children().size();
+		return active_stocks.get_children().size();
 	set(value):
 		_populate_stocks(n_stocks);
 
@@ -43,14 +45,15 @@ func _populate_stocks( a_n_stocks: int ) -> void:
 		var new_stock_instance = stock_instance.instantiate();
 		new_stock_instance.stock_name = _stocks[i];
 		_stocks_registry[i] = new_stock_instance;
-		add_child(new_stock_instance);
+		active_stocks.add_child(new_stock_instance);
 
 func _clear_stocks() -> void:
 	_stocks_registry.clear();
-	var children = get_children();
+	var children = active_stocks.get_children();
 	for child in children:
-		remove_child(child);
-		child.queue_free();
+		if child is StockInstance:
+			active_stocks.remove_child(child);
+			child.queue_free();
 		
 func radio_event():
 	var stock = _stocks_registry[randi() % n_stocks]
@@ -75,8 +78,10 @@ func TV_event():
 	get_parent().speech_bubble_manager.send_bubble(SpeechBubbleManager.SpeechBubbler.TELEVISION, data)
 
 func _on_tv_timer_timeout() -> void:
+	print("TV TIMER")
 	TV_event()
 
 
 func _on_radio_timer_timeout() -> void:
+	print("RADIO TIMER")
 	radio_event()

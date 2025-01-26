@@ -12,17 +12,17 @@ func _ready():
 func _process(_delta):
 	pass
 
-
-func _on_sprite_2d_object_clicked():
-	if(mode >= modes):
-		mode = 0
-	else:
-		mode += 1
-	print("TV channel: " + str(mode))
-	var rootNode = get_parent()
-	if(rootNode):
-		var type = rootNode.get_node("Stocks").get_children()[mode].name
-		var trend = rootNode.getTVTrend(mode)
-		print(type + ": " + str(trend))
-		var past = rootNode.getPastSeven(mode)
-		print(past)
+#
+#func _on_sprite_2d_object_clicked():
+	#if(mode >= modes):
+		#mode = 0
+	#else:
+		#mode += 1
+	#print("TV channel: " + str(mode))
+	#var rootNode = get_parent()
+	#if(rootNode):
+		#var type = rootNode.get_node("Stocks").get_children()[mode].name
+		#var trend = rootNode.getTVTrend(mode)
+		#print(type + ": " + str(trend))
+		#var past = rootNode.getPastSeven(mode)
+		#print(past)

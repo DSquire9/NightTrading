@@ -14,17 +14,17 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 	
-func _on_sprite_2d_object_clicked():
-	if(mode >= modes):
-		mode = 0
-	else:
-		mode += 1
-	print("Radio channel: " + str(mode))
-	var rootNode = get_parent()
-	if(rootNode):
-		prediction = rootNode.getRadioPrediction(mode)
-		type = rootNode.get_node("Stocks").get_children()[mode].name
-		if prediction:
-			print(type + " positive")
-		else:
-			print(type + " negative")
+#func _on_sprite_2d_object_clicked():
+	#if(mode >= modes):
+		#mode = 0
+	#else:
+		#mode += 1
+	#print("Radio channel: " + str(mode))
+	#var rootNode = get_parent()
+	#if(rootNode):
+		#prediction = rootNode.getRadioPrediction(mode)
+		#type = rootNode.get_node("Stocks").get_children()[mode].name
+		#if prediction:
+			#print(type + " positive")
+		#else:
+			#print(type + " negative")

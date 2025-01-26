@@ -11,6 +11,7 @@ func _ready() -> void:
 		await stocks.ready;
 	print("nstocks: " + str(stocks.n_stocks))
 	for i in range(stocks.n_stocks):
+		print(i)
 		var newLabel = price_label.instantiate()
 		newLabel.stock = stocks.get_stock(i)
 		newLabel.size.y = 120
