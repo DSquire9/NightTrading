@@ -5,9 +5,12 @@ signal timer_paused(is_paused);
 signal timer_last_minute();
 signal timer_ended();
 
-@export var start_time: float = 5.0 * 60.0;
 
 @onready var _label: Label = $Label;
+
+# for debugging
+@export var start_time: float = 5.0 * 60.0; # 5.0 * 60.0
+@export var last_minute_threshold = 60.0; # 60.0
 
 var _is_running: bool = false;
 var _is_last_minute: bool = false;
@@ -18,15 +21,13 @@ var _time_on_timer: float = 0.0: # in seconds
 		else:
 			_time_on_timer = value;
 		_label.text = _get_time_as_string();
-		if (!_is_last_minute && _time_on_timer <= 60.0):
+		if (!_is_last_minute && _time_on_timer <= last_minute_threshold):
 			timer_last_minute.emit();
 			_is_last_minute = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	reset();
-	start();
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,7 +42,7 @@ func _process(delta: float) -> void:
 
 func start(duration: float = start_time) -> void: #aim for multiples of 60 b.c. music track = 1 min
 	start_time = duration;
-	_time_on_timer = start_time;
+	reset();
 	_is_running = true;
 	timer_started.emit();
 
