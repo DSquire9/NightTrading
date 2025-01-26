@@ -3,13 +3,25 @@ class_name GameManager extends Node
 @export var timeBetweenInformantEventsInSeconds: float = 2.0;
 #@export var initial_n_stocks: int = 8;
 
-@onready var game_timer: GameTimer = $GameTimer;
+@onready var game_timer: GameTimer = $Camera2D/GameTimer;
+@onready var ui_manager: UIManager = $UIManager;
+@onready var audio_manager: AudioManager = $AudioManager;
 
 @onready var stocks: Stocks = $Stocks;
 @onready var notebook_manager: NotebookManager = $NotebookManager;
 @onready var informant_manager: InformantManager = $InformantManager;
 @onready var speech_bubble_manager: SpeechBubbleManager = $SpeechBubbleManager;
 @onready var background_manager: BackgroundManager = $BackgroundManager;
+
+enum State {
+	GAME_START,
+	GAME_RUNNING,
+	GAME_OVER,
+}
+var _state: State = State.GAME_START:
+	set(value):
+		ui_manager.update_ui(value);
+		_state = value;
 
 var isInformantEventsOn = false:
 	set(value):
@@ -24,18 +36,26 @@ func _ready() -> void:
 	notebook_manager.notebook_updated.connect(on_notebook_updated);
 	informant_manager.informant_updated.connect(on_informant_updated);
 	
-	game_timer.timer_started.connect(on_timer_started);
-	game_timer.timer_paused.connect(on_timer_paused);
-	game_timer.timer_last_minute.connect(on_timer_last_minute);
 	game_timer.timer_ended.connect(on_timer_ended);
 	
-	# this will eventually be done by "start game" button
-	game_timer.start();
+	reset_assets();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
+
+## Inputs
+func _input(event: InputEvent) -> void:
+	match _state:
+		State.GAME_START:
+			if event.is_action_pressed("start_game"):
+				start_game();
+		State.GAME_RUNNING:
+			pass
+		State.GAME_OVER:
+			if event.is_action_pressed("start_game"):
+				start_game();
 
 ## Informant Events
 func start_informant_event_timer() -> void:
@@ -98,40 +118,25 @@ func redraw_backgrounds():
 
 
 ## Timer Effects
-func on_timer_started():
-	#print("START");
-	# let's go!!!
-	# audio general minutes
-	pass
-
-func on_timer_paused():
-	#print("PAUSE");
-	# music stops
-	pass
-
-func on_timer_last_minute():
-	#print("LAST MIN");
-	# audio last minute
-	pass
-
 func on_timer_ended():
 	end_game();
 
 
-## Game Loop Evenets
-func start_game() -> void:
+## Utility
+func reset_assets() -> void:
 	notebook_manager.reset();
 	informant_manager.reset();
 	speech_bubble_manager.reset();
+
+
+## Game Loop Events
+func start_game() -> void:
+	_state = State.GAME_RUNNING;
+	reset_assets();
+	audio_manager.play_profit_maxing(game_timer.start_time);
 	game_timer.start();
 
-func pause_game() -> void:
-	game_timer.pause();
-
-func unpaused_game() -> void:
-	game_timer.unpause();
-
-func end_game():
-	# show end screen
-	print("game over!")
-	pass
+func end_game(is_end_early: bool = false):
+	if is_end_early:
+		audio_manager.play_nothing()
+	_state = State.GAME_OVER;

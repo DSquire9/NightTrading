@@ -25,4 +25,4 @@ func update_informant( a_location: InformantLocation = location, a_message: Stri
 	informant_updated.emit(location, message);
 
 func reset() -> void:
-	location = InformantLocation.NONE;
+	update_informant( InformantLocation.NONE, "" );

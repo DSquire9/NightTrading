@@ -1,6 +1,6 @@
 class_name CustomCamera2D extends Camera2D
 
-var screens = [0, 7680]
+var screens = [0, 6080]
 var currentScreen = 0
 var t = 0.0
 var start = Vector2(0,0)
@@ -14,7 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(t < 1.0 && moving):
-		t += delta * 0.4
+		t += delta
 	
 	if(Input.is_action_just_released("move camera left") && !(currentScreen < 1)):
 		currentScreen = currentScreen - 1

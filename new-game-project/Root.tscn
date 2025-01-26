@@ -2,32 +2,27 @@
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
 [ext_resource type="PackedScene" uid="uid://bd784bcihsjhm" path="res://timer/game_timer.tscn" id="2_gybaa"]
-[ext_resource type="PackedScene" path="res://stock_instance.tscn" id="2_kdqgx"]
+[ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock_instance.tscn" id="2_kdqgx"]
+[ext_resource type="PackedScene" uid="uid://cfot00bpjagtg" path="res://audio/audio_manager.tscn" id="2_klobn"]
 [ext_resource type="Script" path="res://stocks.gd" id="2_lumtb"]
 [ext_resource type="Texture2D" uid="uid://cpabv4d3ncwhy" path="res://resources/images/backgrounds/Screen_Computer__Informant_None__Notebook_Desk.png" id="2_px1m4"]
 [ext_resource type="Script" path="res://informant/informant_manager.gd" id="2_t0yj5"]
 [ext_resource type="Script" path="res://background/background_manager.gd" id="3_3fqm6"]
 [ext_resource type="Texture2D" uid="uid://dreh5ktpvc7ut" path="res://resources/images/backgrounds/Screen_Television__Informant_None.png" id="3_ddl0e"]
-[ext_resource type="PackedScene" uid="uid://bxck8liyqjk3x" path="res://player_portfolio.tscn" id="3_x78sc"]
+[ext_resource type="PackedScene" uid="uid://dkxorndbow4gi" path="res://radio.tscn" id="4_7c415"]
 [ext_resource type="PackedScene" uid="uid://dhnpxedauxc14" path="res://notebook.tscn" id="5_2xyv0"]
 [ext_resource type="PackedScene" uid="uid://cyixc4dt4iwpt" path="res://main.tscn" id="6_3kxvd"]
-[ext_resource type="Script" path="res://notebook/notebook_manager.gd" id="6_mrv1e"]
+[ext_resource type="PackedScene" uid="uid://dtaedowfeugv" path="res://notebook/notebook_manager.tscn" id="6_7u6wg"]
 [ext_resource type="PackedScene" uid="uid://bjr4rcfjctq5c" path="res://informant.tscn" id="6_y8eel"]
 [ext_resource type="Texture2D" uid="uid://dtr2t2oc3n267" path="res://Sprites/Informant.png" id="7_5y2fr"]
 [ext_resource type="Script" path="res://speech_bubbles/speech_bubble_manager.gd" id="8_yfoui"]
 [ext_resource type="PackedScene" uid="uid://bnfqg1grhhvde" path="res://speech_bubbles/speech_bubble_spawner.tscn" id="9_011ng"]
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 [ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
-[ext_resource type="PackedScene" uid="uid://dlvqvjl1n6221" path="res://computer_display.tscn" id="20_2rdml"]
+[ext_resource type="PackedScene" uid="uid://ghadtt162jll" path="res://ui/ui_manager.tscn" id="19_x248j"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_neleb")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-script = ExtResource("13_okbna")
-
-[node name="PlayerPortfolio" parent="." instance=ExtResource("3_x78sc")]
 
 [node name="BackgroundManager" type="Node" parent="."]
 script = ExtResource("3_3fqm6")
@@ -52,20 +47,12 @@ texture = ExtResource("2_px1m4")
 [node name="TelevisionView" type="Node" parent="BackgroundManager"]
 
 [node name="TextureRect" type="TextureRect" parent="BackgroundManager/TelevisionView"]
-offset_left = 7680.0
-offset_right = 11520.0
+offset_left = 6080.0
+offset_right = 9920.0
 offset_bottom = 2160.0
 texture = ExtResource("3_ddl0e")
 
-[node name="NotebookManager" type="Node" parent="."]
-script = ExtResource("6_mrv1e")
-
-[node name="TextureRect" type="TextureRect" parent="NotebookManager"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="AudioManager" parent="." instance=ExtResource("2_klobn")]
 
 [node name="InformantManager" type="Node" parent="."]
 script = ExtResource("2_t0yj5")
@@ -74,16 +61,16 @@ script = ExtResource("2_t0yj5")
 script = ExtResource("8_yfoui")
 
 [node name="Radio" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
-offset_left = 7695.0
-offset_top = -539.0
-offset_right = 8417.0
-offset_bottom = -24.0
+offset_left = 6106.0
+offset_top = -577.0
+offset_right = 6828.0
+offset_bottom = -62.0
 
 [node name="Television" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
-offset_left = 7335.0
-offset_top = -212.0
-offset_right = 8125.0
-offset_bottom = 299.0
+offset_left = 5746.0
+offset_top = -250.0
+offset_right = 6536.0
+offset_bottom = 261.0
 identity = 1
 
 [node name="Informant_Computer" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
@@ -101,22 +88,14 @@ offset_bottom = -308.0
 identity = 3
 
 [node name="Informant_Plants" parent="SpeechBubbleManager" instance=ExtResource("9_011ng")]
-offset_left = 6953.0
-offset_top = -480.0
-offset_right = 7453.0
-offset_bottom = -230.0
+offset_left = 5364.0
+offset_top = -518.0
+offset_right = 5864.0
+offset_bottom = -268.0
 identity = 4
 
 [node name="Stocks" type="Node" parent="."]
 script = ExtResource("2_lumtb")
-
-[node name="TV_Timer" type="Timer" parent="Stocks"]
-wait_time = 5.0
-autostart = true
-
-[node name="Radio_Timer" type="Timer" parent="Stocks"]
-wait_time = 7.0
-autostart = true
 
 [node name="ActiveStocks" type="Node" parent="Stocks"]
 
@@ -136,41 +115,57 @@ autostart = true
 
 [node name="Manufacturing" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
 
+[node name="TV" parent="." instance=ExtResource("3_1l420")]
+offset_left = 8861.0
+offset_top = 1088.0
+offset_right = 9069.0
+offset_bottom = 1296.0
+
+[node name="Radio" parent="." instance=ExtResource("4_7c415")]
+offset_left = 9012.0
+offset_top = 599.0
+offset_right = 9220.0
+offset_bottom = 807.0
+scale = Vector2(1.04538, 0.861223)
+
+[node name="Informant" parent="." instance=ExtResource("6_y8eel")]
+offset_left = 7023.0
+offset_top = 587.0
+offset_right = 7231.0
+offset_bottom = 795.0
+icon = ExtResource("7_5y2fr")
+
+[node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
+visible = false
+
+[node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
+visible = false
+z_index = 1000
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("13_okbna")
+
+[node name="GameTimer" parent="Camera2D" instance=ExtResource("2_gybaa")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1595.0
+offset_right = 2245.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
 [node name="Notebook" parent="." instance=ExtResource("5_2xyv0")]
 offset_left = 3196.0
 offset_top = 1429.0
 offset_right = 3332.0
 offset_bottom = 1565.0
 
-[node name="Informant" parent="." instance=ExtResource("6_y8eel")]
-offset_left = 8612.0
-offset_top = 625.0
-offset_right = 8820.0
-offset_bottom = 833.0
-icon = ExtResource("7_5y2fr")
+[node name="NotebookManager" parent="." instance=ExtResource("6_7u6wg")]
 
-[node name="Menus" parent="." instance=ExtResource("6_3kxvd")]
-visible = false
-z_index = 1000
-
-[node name="GameTimer" parent="." instance=ExtResource("2_gybaa")]
-anchors_preset = 5
+[node name="UIManager" parent="." instance=ExtResource("19_x248j")]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 100.0
-grow_horizontal = 2
-
-[node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
-visible = false
-
-[node name="ComputerDisplay" parent="." instance=ExtResource("20_2rdml")]
-offset_left = 887.0
-offset_top = 587.0
-offset_right = -1960.0
-offset_bottom = -827.0
-rotation = -0.0752188
-
-[connection signal="timeout" from="Stocks/TV_Timer" to="Stocks" method="_on_tv_timer_timeout"]
-[connection signal="timeout" from="Stocks/Radio_Timer" to="Stocks" method="_on_radio_timer_timeout"]
+anchor_bottom = 0.5
