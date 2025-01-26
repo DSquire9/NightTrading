@@ -14,7 +14,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(t < 1.0 && moving):
-		t += delta * 0.4
+		t += delta * 0.7
 	
 	if(Input.is_action_just_released("move camera left") && !(currentScreen < 1)):
 		currentScreen = currentScreen - 1
