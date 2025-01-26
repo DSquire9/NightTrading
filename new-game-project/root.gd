@@ -38,8 +38,7 @@ func _ready() -> void:
 	
 	game_timer.timer_ended.connect(on_timer_ended);
 	
-	# this will eventually be done by "start game" button
-	#game_timer.start();
+	reset_assets();
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -123,19 +122,21 @@ func on_timer_ended():
 	end_game();
 
 
-## Game Loop Events
-func start_game() -> void:
-	_state = State.GAME_RUNNING;
+## Utility
+func reset_assets() -> void:
 	notebook_manager.reset();
 	informant_manager.reset();
 	speech_bubble_manager.reset();
+
+
+## Game Loop Events
+func start_game() -> void:
+	_state = State.GAME_RUNNING;
+	reset_assets();
 	audio_manager.play_profit_maxing(game_timer.start_time);
 	game_timer.start();
 
 func end_game(is_end_early: bool = false):
 	if is_end_early:
 		audio_manager.play_nothing()
-	#audio_manager.play_profit_maxing();
 	_state = State.GAME_OVER;
-	print("game over!")
-	pass

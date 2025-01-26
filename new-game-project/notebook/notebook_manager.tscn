@@ -1,0 +1,344 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtaedowfeugv"]
+
+[ext_resource type="Script" path="res://notebook/notebook_manager.gd" id="1_d6gw4"]
+[ext_resource type="Texture2D" uid="uid://cxvwtn0osr7iy" path="res://resources/images/notebook/Notebook_UpOpen.png" id="2_04glj"]
+[ext_resource type="FontFile" uid="uid://rpigi4my4bj4" path="res://fonts/Covered_By_Your_Grace/CoveredByYourGrace-Regular.ttf" id="3_0n7hk"]
+[ext_resource type="FontFile" uid="uid://cki7efy2kwdd" path="res://fonts/W95FA/W95FA/W95FA.otf" id="4_7tj8x"]
+[ext_resource type="Script" path="res://notebook/buy_sell_toggle.gd" id="4_tr6oi"]
+[ext_resource type="Script" path="res://notebook/stock_amount_selector.gd" id="6_yll8s"]
+[ext_resource type="Script" path="res://notebook/stock_type_selector.gd" id="7_1si64"]
+[ext_resource type="Script" path="res://notebook/confirm_transaction_button.gd" id="7_t6ml6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kidd6"]
+bg_color = Color(1, 0.683333, 0, 1)
+
+[node name="NotebookManager" type="Node"]
+script = ExtResource("1_d6gw4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_04glj")
+
+[node name="NotebookUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1294.0
+offset_top = 105.0
+offset_right = -1142.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="NotebookUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -359.0
+offset_right = 359.0
+offset_bottom = 265.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.180005, 0.180005, 0.180005, 1)
+theme_override_fonts/font = ExtResource("3_0n7hk")
+theme_override_font_sizes/font_size = 196
+text = "<< my stonks >>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="prompt start" type="Label" parent="NotebookUI"]
+offset_left = 56.0
+offset_top = 233.0
+offset_right = 544.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0n7hk")
+theme_override_font_sizes/font_size = 128
+text = "I want to...
+"
+vertical_alignment = 1
+
+[node name="BuySellToggle" type="HBoxContainer" parent="NotebookUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -117.0
+offset_top = 303.0
+offset_right = 683.0
+offset_bottom = 543.0
+grow_horizontal = 2
+script = ExtResource("4_tr6oi")
+
+[node name="BUY" type="Button" parent="NotebookUI/BuySellToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 196
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kidd6")
+
+[node name="Label" type="Label" parent="NotebookUI/BuySellToggle/BUY"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+text = "BUY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SELL" type="Button" parent="NotebookUI/BuySellToggle"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 196
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kidd6")
+
+[node name="Label" type="Label" parent="NotebookUI/BuySellToggle/SELL"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+text = "SELL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StockAmountSelector" type="Control" parent="NotebookUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -337.5
+offset_right = 410.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_yll8s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NotebookUI/StockAmountSelector"]
+layout_mode = 0
+offset_left = -224.0
+offset_top = -18.0
+offset_right = -24.0
+offset_bottom = 286.0
+
+[node name="INCREASE" type="Button" parent="NotebookUI/StockAmountSelector/VBoxContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+
+[node name="Label" type="Label" parent="NotebookUI/StockAmountSelector/VBoxContainer/INCREASE"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DECREASE" type="Button" parent="NotebookUI/StockAmountSelector/VBoxContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+
+[node name="Label" type="Label" parent="NotebookUI/StockAmountSelector/VBoxContainer/DECREASE"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="NotebookUI/StockAmountSelector"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+offset_left = -6.0
+offset_top = 40.0
+offset_right = 494.0
+offset_bottom = 240.0
+scale = Vector2(1.36, 1)
+
+[node name="stock_number" type="Label" parent="NotebookUI/StockAmountSelector"]
+layout_mode = 2
+offset_left = 26.0
+offset_top = 80.0
+offset_right = 646.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 128
+text = "1000000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stock_units" type="Label" parent="NotebookUI/StockAmountSelector"]
+layout_mode = 2
+offset_left = 661.0
+offset_top = 54.0
+offset_right = 1007.0
+offset_bottom = 227.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0n7hk")
+theme_override_font_sizes/font_size = 128
+text = " stocks"
+vertical_alignment = 1
+
+[node name="StockTypeSelector" type="Control" parent="NotebookUI"]
+anchors_preset = 0
+offset_left = 54.0
+offset_top = -181.0
+offset_right = 94.0
+offset_bottom = -141.0
+script = ExtResource("7_1si64")
+
+[node name="stock_units" type="Label" parent="NotebookUI/StockTypeSelector"]
+offset_left = 246.0
+offset_top = 1194.0
+offset_right = 325.0
+offset_bottom = 1367.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_0n7hk")
+theme_override_font_sizes/font_size = 128
+text = "of"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NotebookUI/StockTypeSelector"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 1152.0
+offset_right = 600.0
+offset_bottom = 1302.0
+
+[node name="LEFT" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+
+[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/LEFT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "<"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 2
+
+[node name="RIGHT" type="Button" parent="NotebookUI/StockTypeSelector/HBoxContainer"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 96
+
+[node name="Label" type="Label" parent="NotebookUI/StockTypeSelector/HBoxContainer/RIGHT"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = ">"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ConfirmTransactionButton" type="Control" parent="NotebookUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_t6ml6")
+
+[node name="Label" type="Label" parent="NotebookUI/ConfirmTransactionButton"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 87.0
+offset_top = 1581.0
+offset_right = 1284.0
+offset_bottom = 1846.0
+grow_horizontal = 2
+rotation = -0.124626
+theme_override_colors/font_color = Color(0.180005, 0.180005, 0.180005, 1)
+theme_override_fonts/font = ExtResource("3_0n7hk")
+theme_override_font_sizes/font_size = 128
+text = "stock guy = (123)-456-7890"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CALL" type="Button" parent="NotebookUI/ConfirmTransactionButton"]
+offset_left = 921.0
+offset_top = 1696.0
+offset_right = 1341.0
+offset_bottom = 1936.0
+rotation = -0.167273
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 196
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kidd6")
+
+[node name="Label" type="Label" parent="NotebookUI/ConfirmTransactionButton/CALL"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.5
+offset_top = -60.5
+offset_right = 143.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_7tj8x")
+theme_override_font_sizes/font_size = 128
+text = "CALL"
+horizontal_alignment = 1
+vertical_alignment = 1
