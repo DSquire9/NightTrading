@@ -39,7 +39,7 @@ func trigger_informant_event() -> void:
 	#notebook_manager.update_notebook(NotebookManager.NotebookLocation.FOCUS_OPEN);
 	#informant_manager.update_informant(InformantManager.InformantLocation.WINDOW);
 	#redraw_backgrounds();
-	
+
 	var n_stocks = stocks.n_stocks;
 	var n_blanks = 1; # n_blanks / (n_stocks + n_blanks) = probability that nothing happens
 	var eventType = randi() % (n_stocks+n_blanks)
