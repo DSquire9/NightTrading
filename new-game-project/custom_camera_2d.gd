@@ -8,7 +8,7 @@ var moving = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Button2.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,14 +21,37 @@ func _process(delta: float) -> void:
 		t = 0.0
 		start = position
 		moving = true
+		$Button2.hide()
+		$Button3.show()
+		
 	if(Input.is_action_just_released("move camera right") && !(currentScreen >= screens.size() - 1)):
 		currentScreen = currentScreen + 1
 		t = 0.0
 		start = position
 		moving = true
+		$Button3.hide()
+		$Button2.show()
 	
 	position = start.lerp(Vector2(screens[currentScreen],0), t)
 	if(t >= 1.0):
 		t = 0.0
 		start = position
 		moving = false
+
+
+func _on_button_2_pressed():
+	currentScreen = currentScreen - 1
+	t = 0.0
+	start = position
+	moving = true
+	$Button2.hide()
+	$Button3.show()
+
+
+func _on_button_3_pressed():
+	currentScreen = currentScreen + 1
+	t = 0.0
+	start = position
+	moving = true
+	$Button3.hide()
+	$Button2.show()
