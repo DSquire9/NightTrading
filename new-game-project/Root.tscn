@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://br4y18terbox8"]
 
 [ext_resource type="Script" path="res://root.gd" id="1_neleb"]
-[ext_resource type="PackedScene" path="res://player_portfolio.tscn" id="2_ca11l"]
+[ext_resource type="PackedScene" uid="uid://bxck8liyqjk3x" path="res://player_portfolio.tscn" id="2_ca11l"]
 [ext_resource type="PackedScene" uid="uid://bd784bcihsjhm" path="res://timer/game_timer.tscn" id="2_gybaa"]
-[ext_resource type="PackedScene" uid="uid://b7px1dwva0wpc" path="res://stock_instance.tscn" id="2_kdqgx"]
+[ext_resource type="PackedScene" path="res://stock_instance.tscn" id="2_kdqgx"]
 [ext_resource type="PackedScene" uid="uid://cfot00bpjagtg" path="res://audio/audio_manager.tscn" id="2_klobn"]
 [ext_resource type="Script" path="res://stocks.gd" id="2_lumtb"]
 [ext_resource type="Texture2D" uid="uid://cpabv4d3ncwhy" path="res://resources/images/backgrounds/Screen_Computer__Informant_None__Notebook_Desk.png" id="2_px1m4"]
@@ -18,7 +18,7 @@
 [ext_resource type="Script" path="res://custom_camera_2d.gd" id="13_okbna"]
 [ext_resource type="PackedScene" uid="uid://du1lghvesfk5d" path="res://prices_display.tscn" id="18_cn5mx"]
 [ext_resource type="PackedScene" uid="uid://ghadtt162jll" path="res://ui/ui_manager.tscn" id="19_x248j"]
-[ext_resource type="PackedScene" path="res://computer_display.tscn" id="22_pych2"]
+[ext_resource type="PackedScene" uid="uid://dlvqvjl1n6221" path="res://computer_display.tscn" id="22_pych2"]
 
 [node name="Root2" type="Node"]
 script = ExtResource("1_neleb")
@@ -117,6 +117,14 @@ script = ExtResource("2_lumtb")
 
 [node name="Manufacturing" parent="Stocks/ActiveStocks" instance=ExtResource("2_kdqgx")]
 
+[node name="RadioTimer" type="Timer" parent="Stocks"]
+wait_time = 4.0
+autostart = true
+
+[node name="TVTimer" type="Timer" parent="Stocks"]
+wait_time = 4.0
+autostart = true
+
 [node name="PricesDisplay" parent="." instance=ExtResource("18_cn5mx")]
 visible = false
 
@@ -175,5 +183,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
+[connection signal="timeout" from="Stocks/RadioTimer" to="Stocks" method="_on_radio_timer_timeout"]
+[connection signal="timeout" from="Stocks/TVTimer" to="Stocks" method="_on_tv_timer_timeout"]
 [connection signal="pressed" from="Camera2D/Button2" to="Camera2D" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/Button3" to="Camera2D" method="_on_button_3_pressed"]
