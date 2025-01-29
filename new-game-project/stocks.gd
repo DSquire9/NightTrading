@@ -14,8 +14,8 @@ var n_stocks: int :
 const _stocks = [
 	"Tech",
 	"Business",
-	"Consumer_Goods",
-	"Energy_Water",
+	"Consumer Goods",
+	"Energy & Water",
 	"Finance",
 	"Healthcare",
 	"Hospitality",
